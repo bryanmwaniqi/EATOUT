@@ -1,0 +1,620 @@
+/*Overall css*/
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	background-color: #fefefe;
+	width: 100%;
+	overflow-x: hidden;
+}
+/*navigation bar*/
+.navbar
+{
+	/*border-bottom: 0.05rem solid #999;*/
+	border-radius: 0;
+}
+.navbar-brand
+{
+	height: 3rem;
+	color: #fff!important;
+	font-size: 1.5rem;
+}
+.navbar-nav li a
+{
+	color: #fff!important;
+	font-size: 1.2rem;
+}
+.navbar-nav li.active a, .navbar-nav li a:hover
+{
+	color: #fd7e14!important;
+	border-bottom: 2px solid #fd7e14;
+}
+.logo-text
+{
+	color: #fd7e14;
+}
+.navbar-toggler
+{
+	border: none;
+}
+.navbar-toggler-icon
+{
+	filter: invert(56%) sepia(42%) saturate(5504%) hue-rotate(360deg) brightness(101%) contrast(106%);
+}
+.reserve-btn
+{
+	background-color: #fd7e14;
+	color: #fff!important;
+	border-radius: 0;
+}
+.navbar-2 i
+{
+	height: 25px;
+	width: 25px;
+	text-align: center;
+	color: #fff;
+	position: relative;
+	margin-top: 0.8rem;
+}
+@media (max-width: 1000px) {
+	.navbar-2{
+		display: none;
+	}
+}
+
+
+/*slider section*/
+.carousel-item
+{
+	height: 100vh;
+	min-height: 300px;
+	background: no-repeat center center scroll;
+	text-align: center;
+}
+.carousel-item img
+{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.slider .carousel-item:after 
+{
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+}
+.carousel-caption
+{
+	top: 50%;
+	transform: translateY(-50%);
+}
+.carousel-caption h5
+{
+	font-size: 2.5rem;
+}
+.carousel-caption h1
+{
+	font-size: 3.5rem;
+}
+.carousel-caption p
+{
+	font-size: 0.9rem;
+}
+.carousel-caption button.btn-shade
+{
+	color: #fff;
+	min-width: 16rem;
+	background-color: #fd7e14;;
+	border-radius: 0;
+	min-height: 4rem;
+}
+.carousel-caption button.btn-outline-warning
+{
+	border-radius: 0;
+	border-color: #fff;
+	min-width: 16rem;
+	min-height: 3.5rem;
+	font-size: 1.5rem;
+	color: #fff;
+}
+.carousel-caption button.btn-outline-warning:hover
+{
+	color: #fff;
+	background-color: #fd7e14;
+	border:none;
+}
+
+@media (max-width: 768px){
+	.carousel-caption h5{
+		font-size: 1.5rem;
+	}
+	.carousel-caption h1
+	{
+		font-size: 2.5rem;
+	}
+	.carousel-caption p
+	{
+		font-size: 0.8rem;
+	}
+	.carousel-caption button.btn-shade
+	{
+		min-width: 14rem;
+		min-height: 3rem;
+	}
+.carousel-caption button.btn-outline-warning
+	{
+		min-width: 14rem;
+		min-height: 3rem;
+		font-size: 1rem;
+	}
+}
+
+.scroller
+{
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+}
+.scroll-down
+{
+	position:relative;
+	width: 30px;
+	height: 50px;
+	border-radius: 25px;
+	border: 3px solid #fff;
+	background: transparent;
+	cursor: pointer;
+}
+.scroll-down:before
+{
+	content: '';
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #fff;
+	left: 50%;
+	top: 5px;
+	transform: translate(-50%, 0);
+	animation: animate 1.5s linear infinite;
+}
+@keyframes animate
+{
+	0%
+	{
+		transform: translate(-50%, 0px);
+		opacity: 0;
+	}
+	70%
+	{
+		transform: translate(-50%, 10px);
+		opacity: 1;
+	}
+	80%
+	{
+		transform: translate(-50%, 15px);
+	}
+	90%
+	{
+		transform: translate(-50%, 20px);
+	}
+	100%
+	{
+		transform: translate(-50%, 30px);
+	}
+}
+
+/*Specialties section*/
+.small-center
+{
+	color: #fd7e14;
+}
+.underline
+{
+	background-color: #000;
+	height: 1px;
+	width: 70px;
+}
+.center-title
+{
+	color: black;
+	font-size: 2.5rem;
+}
+#specialties
+{
+	margin-bottom:150px;
+}
+.section.specialties
+{
+	min-height: 480px;
+}
+.contentslide .sliderslide-content img {
+    filter: invert(56%) sepia(42%) saturate(5504%) hue-rotate(360deg) brightness(101%) contrast(106%);
+    width: 70px;
+    min-height: 80px;
+}
+.col-lg-12{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.owl-carousel .specialty
+{
+	width: 360px;
+	min-height: 350px;
+	color: #000;
+	border: 1px solid #f4f4f4;
+}
+.owl-carousel .specialty:hover
+{
+	background-color: #ff7200;
+	color: #fff;
+}
+.specialty img {
+    filter: invert(56%) sepia(42%) saturate(5504%) hue-rotate(360deg) brightness(101%) contrast(106%);
+    height: 100px;
+    width: 100px!important;
+}
+.owl-nav>div
+{
+	background-color: #f4f4f4;
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+}
+.owl-nav>div.one:hover
+{
+	background-color: #1e1e1e;
+	color: #fd7e14;
+	
+}
+/*.owl-dots>div
+{
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	background-color: #f4f4f4;
+}
+.owl-dots div.active
+{
+	background-color: #fd7e14;
+}*/
+.nxt, .prv
+{
+	width: 10px;
+	height: 10px;
+	transition: .5s; 
+	box-shadow: -3px 3px 0 rgba(0,0,0,.5)
+}
+.nxt:hover, .prv:hover
+{
+	border-color: #fd7e14;
+}
+.nxt
+{
+	transform: rotate(225deg);
+}
+.prv
+{
+	transform: rotate(45deg);
+	margin-left: 20px;
+}
+
+/* history section */
+
+
+#history-section
+{
+	min-height: 480px;
+	margin-top: 100px;
+}
+.history-img
+{
+	min-height: 480px;
+	background-image: url("../img/appetizers-chef-cuisine-1267320.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.history
+{
+	background-color: #191b1b;
+	color: #fff;
+}
+.history p
+{
+	line-height: 35px;
+	font-size: 1rem;
+}
+.discover-menu
+{
+	background-color: #fd7e14;
+	border-radius: 0;
+	color: #fff;
+}
+.discover-menu:hover
+{
+	color: #fff;
+}
+
+/* section menu*/
+
+#featured
+{
+	height: 500px;
+}
+.featured-meal
+{
+	height: 480px;
+}
+.featured-info
+{
+    background: rgba(249,246,246,0.85);
+}
+.featured-img
+{
+	height: 430px;
+}
+.featured-img img
+{
+	height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.featured-text 
+{
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    padding: 22px;
+    position: relative;
+    top: 0px;
+    left: 0px;    
+    box-sizing:border-box;
+}
+.featured-text p
+{
+    margin-top:-10px;
+    margin-bottom: 0px;
+    font-size: 17.5px;
+    color: #3a3342;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+.featured-button
+{
+    display: inline-block;
+    float: right;
+}
+a.bt-orange
+{
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    padding: 40px;
+    top: 0px;
+    left: 0px;    
+    box-sizing:border-box;
+    background-color: #ff7200; 
+    border: 1px solid #ff7200;
+}
+
+#menu
+{
+	min-height: 480px;
+	background:linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url("../img/beef-close-up-cook-2103730-1.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+.menu-header
+{
+	color: #fd7e14;
+}
+.menu-text
+{
+	font-size: 14px;
+}
+#menu span
+{
+	color: #ce9852;
+}
+
+
+/*gallery section*/
+#gallery
+{
+	min-height: 680px;
+}
+div.sliderslide:hover
+{
+	background-color: #fd7e14;
+	color: #fff;
+}
+#testimonials
+{
+	min-height: 400px;
+	margin-top: 70px;
+}
+.testimonials-img
+{
+	min-height: 480px;
+	background-image: url("../img/beef-close.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.customers
+{
+	background-color: #191b1b;
+	color: #fff;
+}
+.customers p
+{
+	line-height: 35px;
+	font-size: 1rem;
+}
+h5.customer-name
+{
+	color: #fd7e14;
+}
+#chefs
+{
+	min-height: 480px;
+	margin-top: 70px;
+}
+.chef:hover
+{
+	background-color: #ff7200;
+	color: #ffffff;
+}
+.chef img.no-filter
+{
+	height: 300px;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.chef h4
+{
+	color: #3A3A3A;
+}
+.owl-carousel .chef
+{
+	width: 360px;
+	min-height: 350px;
+	color: #000;
+	border: 1px solid #f4f4f4;
+}
+#reservation
+{
+	min-height: 480px;
+	background-image:url("../img/aperitif-aperitivo-appetizer-2666.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.reserve-header
+{
+	font-size: 2.5rem;
+}
+.booking-form
+{
+	max-width: 50%;
+}
+.booking-form label 
+{
+    font-size: 29.5px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: condensed;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    width: 100%;
+}
+.booking-form input
+{
+    font-size: 15.5px;
+    display: inline-block;
+    padding: 20px 30px;
+    width: 100%;
+    padding: 15px;
+    padding-right: 0px;
+    height: auto;
+    background-color: transparent;
+    border-radius: 0;
+}
+.btn-orange
+{
+	display: inline-block;
+    width: 200px;
+    height: 55px;
+    padding: 0px;
+    margin-right: 20px;
+    background-color: #ff7200; 
+    border: 1px solid #ff7200;
+    color: #fff;
+}
+
+
+section.footer
+{
+	min-height: 400px;
+	background-color: #191b1b;
+	/*position: fixed;*/
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+.footer-header
+{
+	color: #fd7e14;
+	margin-bottom: 1.2rem;
+}
+.footer-text
+{
+	line-height: 20px;
+}
+.footer input
+{
+    font-size: 15.5px;
+    display: inline-block;
+    width: 80%;
+    border-right: none;
+    padding: 15px;
+    padding-right: 0px;
+    height: auto;
+    background-color: transparent;
+    border-radius: 0;
+}
+.form-control::placeholder
+{
+	color: #fff;
+	opacity: 1;
+}
+button.bt-orange
+{
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    padding: 0px;
+    margin-right: 20px;
+    background-color: #ff7200; 
+    border: 1px solid #ff7200;
+}
+.copyright
+{
+	background-color: #191b1b; 
+	height: 20px;
+	/*border-top: 1px solid #f4f4f4;*/
+	margin: 0;
+	padding: 0;
+}
+.logo
+{
+	font-size: 30px;
+	color: #fff;
+}
+.logo:hover
+{
+	font-size: 30px;
+	color: #fff;
+	text-decoration: none;
+}
+.email
+{
+	color: #fff;
+}
+
