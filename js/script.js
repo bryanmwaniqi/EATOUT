@@ -243,7 +243,33 @@ $(function () {
     // fetching resources
     mealsList = $('.meals');
     let url = "http://127.0.0.1:5000/api/v1/meals";
-    let output = "";
+    output = "";
+    let mealCatalog = products => {
+        products.forEach(product => {
+            output += `
+            <div class="meal">
+                <div class="d-flex flex-column align-items-center text-center p-0 mb-5">
+                    <div class="col text-left">
+                        <div class="image-wrapper menu-img mx-auto">
+                            <a href="single-product.html" class="">
+                                <img src="${product.image_url}" alt="${product.name} flavoured pizza image" class="product-img circular mb-1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="meal-text">
+                        <h6 class="font-weight-bold my-2">${product.name}</h6>
+                        <span class="font-weight-bold">$${product.price}</span>
+                        <p class="">
+                            ${product.description}
+                        </p>
+                        <button class="btn regular-btn"><i class="fas fa-shopping-bag fa-sm tangerine mr-2"></i> Add to Cart</button>  
+                    </div>
+                </div>
+            </div>
+        `;
+        });
+        mealsList.append(output)
+    }
     fetch(url, {
         mode: 'cors'
     })
@@ -251,29 +277,62 @@ $(function () {
         return response.json()
     })
     .then((data) => {
-        console.log(data)
-        data.forEach(product => {
-            output += ` 
-            <div class="meal d-flex flex-column align-items-center text-center p-0 mb-5">
-                <div class="col text-left">
-                    <div class="image-wrapper menu-img mx-auto">
-                        <a href="single-product.html" class="">
-                            <img src="assets/pepperoni-pizza.jpg" alt="${product.name} flavoured pizza image" class="product-img circular mb-1">
-                        </a>
-                    </div>
-                </div>
-                <div class="meal-text">
-                    <h6 class="font-weight-bold my-2">${product.name}</h6>
-                    <span class="font-weight-bold">$${product.price}</span>
-                    <p class="">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Ratione corporis nulla, quam magnam modi.
-                    </p>
-                    <button class="btn regular-btn"><i class="fas fa-shopping-bag fa-sm tangerine mr-2"></i> Add to Cart</button>  
-                </div>
-            </div>
-            `;   
-        });
-        mealsList.append(output);
-    })
+        mealCatalog(data);
+        let itemsTally = data.length;
+        let limit = 9;
+        let totalPages = Math.ceil((itemsTally/limit));
+        $('.active .meals .meal').slice(limit).hide(); 
+        $('.menu-tab').each(function (){
+            $('.menu-tab .tab-pane #paginate').append('<li id="prev" class="mr-1 regular-btn circular d-flex justify-content-center"><a class="font-weight-bold text-center"><span class="" aria-label="Previous">‹‹</span></a></li>')
+            $('.menu-tab .tab-pane #paginate').append('<li class="circular d-flex justify-content-center current-page active"><a href="javascript:void(0)">1</a></li>')
+            for (let i = 2; i <= totalPages; i++) {
+                $('.menu-tab .tab-pane #paginate').append('<li class="d-flex justify-content-center circular current-page"><a href="javascript:void(0)">' + i + '</a></li>');   
+            }
+            $('.menu-tab .tab-pane #paginate').append('<li class="regular-btn ml-1 circular d-flex justify-content-center" id="nxt"><a class="font-weight-bold text-center"><span class="" aria-label="Next">››</span></a></li>');
+            $('.menu-tab .tab-pane #paginate li.current-page').on('click', function () {
+                if ($(this).hasClass('active')) {
+                    return false;
+                } else {
+                    let currentPage = $(this).index();
+                    $('.menu-tab .tab-pane #paginate li').removeClass('active');
+                    $(this).addClass('active');
+                    $('.active .meals .meal').hide();
+                    let overallTotal = limit * currentPage;
+                    for (let i = overallTotal - limit; i < overallTotal; i++) {
+                        $('.active .meals .meal:eq('+ i +')').show();    
+                    }
+                }
+            });
+            $('.menu-tab .tab-pane #paginate #nxt').on('click', function () {
+                let curPage = $('.menu-tab .tab-pane #paginate li.active').index();
+                if (curPage == totalPages) {
+                    return false;
+                } else {
+                    curPage++;
+                    $('.menu-tab .tab-pane #paginate li').removeClass('active');
+                    $('.active .meals .meal').hide();
+                    let overallTotal = limit * curPage;
+                    for (let i = overallTotal - limit; i < overallTotal; i++) {
+                        $('.active .meals .meal:eq('+ i +')').show();    
+                    }
+                    $('.menu-tab .tab-pane #paginate li.current-page:eq('+ (curPage - 1) +')').addClass('active');
+                }
+            });
+            $('.menu-tab .tab-pane #paginate #prev').on('click', function () {
+                let curPage = $('.menu-tab .tab-pane #paginate li.active').index();
+                if (curPage == 1) {
+                    return false;
+                } else {
+                    curPage--;
+                    $('.menu-tab .tab-pane #paginate li').removeClass('active');
+                    $('.active .meals .meal').hide();
+                    let overallTotal = limit * curPage;
+                    for (let i = overallTotal - limit; i < overallTotal; i++) {
+                        $('.active .meals .meal:eq('+ i +')').show();    
+                    } 
+                    $('.menu-tab .tab-pane #paginate li.current-page:eq('+ (curPage - 1) +')').addClass('active');
+                }
+            });
+        }); 
+    });
 });

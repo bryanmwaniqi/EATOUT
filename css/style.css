@@ -1316,11 +1316,27 @@ blockquote{
     color: var(--tangerine);
 }
 .nav-btn{
-    width: 2rem;
-    height: 2rem;
+    /* width: 2rem;
+    height: 2rem; */
 }
-.nav-btn:hover span{
-    color: var(--tangerine) !important;
+#paginate li.regular-btn:hover span{
+    color: var(--primary-color);
+}
+#paginate li{
+    list-style-type:  none;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.1rem;
+    margin-left: 0.1rem;
+}
+#paginate li a{
+    color:var(--text-color);
+}
+#paginate li.active{
+    background-color: var(--tangerine);
+}
+#paginate li.active a{
+    color:var(--primary-color);
 }
 /* pizza cuisines styling*/
 
