@@ -1,10 +1,10 @@
 $(function () {
     // loader
-    $(window).on("load", function() {
-        setTimeout(function(){
-            $('.loader').fadeToggle();
-        },2500);
-    });
+    // $(window).on("load", function() {
+    //     setTimeout(function(){
+    //         $('.loader').fadeToggle();
+    //     },2500);
+    // });
 
     // box shadow on scroll logic
     $(window).scroll(function () {
@@ -240,7 +240,7 @@ $(function () {
         $('.' + activeRadio).show();
     });
 
-    // fetching resources
+    // fetching meal products resources
     mealsList = $('.meals');
     let url = "http://127.0.0.1:5000/api/v1/meals";
     output = "";
@@ -335,4 +335,112 @@ $(function () {
             });
         }); 
     });
+
+    // Login/fetch authorization token
+    const loginUrl = "http://127.0.0.1:5000/api/v1/login";
+    $('#Login').submit(function (e) {
+        e.preventDefault();
+        let formData = new FormData(e.target);
+        let loginPayload = {};
+        formData.forEach((value, key) => (loginPayload[key] = value));
+        fetch(loginUrl, {
+            mode: "cors",
+            method: "POST",
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(loginPayload)
+        }).then( response => {
+            return response.json();
+        }).then( data => {
+            if ("message" in data) {
+                if ($('.form-row').length == 4){
+                    let failAuth = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${data.message}</div></div></div>`;
+                    $(failAuth).insertBefore('#submit');
+                    // $('form#Login').reset();
+                }
+                $('form#Login').reset();
+            } else {
+                // location.replace('offers-landing.html');
+                console.log(data);
+            } 
+        }).catch(error => {
+            if ($('.form-row').length == 4) {
+                let err = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${error}</div></div></div>`;
+                $(err).insertBefore('#submit');
+            } else {
+                return false;
+            }
+        });
+    });
+
+    // Account creation using fetch
+    const signupUrl = "http://127.0.0.1:5000/api/v1/register"
+    $('#signup').submit(function (e) {
+        e.preventDefault();
+        let formData = new FormData(e.target);
+        let signupPayload = {};
+        formData.forEach((value, key) => (signupPayload[key] = value));
+        // console.log(signupPayload);
+        fetch(signupUrl, {
+            mode: "cors",
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(signupPayload)
+        }).then(response => {
+            return response.json()
+        }).then(data => {
+            $('#signup div.err').remove();
+            if ("_schema" in data) {
+                if (data._schema[0] == "username already taken.") {
+                    let failedSignup = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${data._schema[0]}</div></div></div>`;
+                    $(failedSignup).insertAfter('#username-row');
+                } else {
+                    let failedSignup = `<div class="err form-row justify-content-center"><div class="form-group col-md-9"><div class="alert alert-danger" role="alert">${data._schema[0]}</div></div></div>`;
+                    $(failedSignup).insertBefore('#submit');
+                }
+            } else if (Object.keys(data).length == 1 && "email" in data) {
+                let failedSignup = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${data.email[0]}</div></div></div>`;
+                $(failedSignup).insertAfter('#email-row');
+            } else if (Object.keys(data).length == 1 && "username" in data) {
+                let failedSignup = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${data.username[0]}</div></div></div>`;
+                $(failedSignup).insertAfter('#username-row');
+            } else if (Object.keys(data).length == 1 && "password" in data) {
+                let failedSignup = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${data.username[0]}</div></div></div>`;
+                $(failedSignup).insertAfter('#password-row');
+            } else if (Object.keys(data).length == 1 && "confirm_password" in data) {
+                let failedSignup = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${data.username[0]}</div></div></div>`;
+                $(failedSignup).insertAfter('#confirm-row');
+            } else {
+                console.log(data)
+                let account = `<div class="account form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-success" role="alert">Account ${data.username} created successfuly, access the login page <a href="login.html">here</a></div></div></div>`;
+                $(account).insertBefore('#username-row');
+                // location.replace('login.html');
+            }
+        }).catch(error => {
+            if ($('.form-row').length == 4) {
+                let err = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${error}</div></div></div>`;
+                $(err).insertBefore('#submit');
+            } else {
+                return false;
+            }
+        });
+    });
+    //fetch reservations
+    $('.get-reservations').on('click', function () {
+        let reservationsUrl = "http://127.0.0.1:5000/api/v1/reservations"
+        fetch(reservationsUrl,{
+            mode: "cors",
+            credentials: "include"
+        }).then( response => {
+            return response.json();
+        }).then( data => {
+            console.log(data);
+        }).catch(error => {
+            console.log(error);
+        })
+    })
 });

@@ -28,9 +28,9 @@
     </head>
     <body>
         <!-- loader -->
-        <!-- <div class="loader">
+        <div class="loader">
             <div class="pre-loader"></div>
-        </div> -->
+        </div>
         
         <!-- navigation section -->
         <nav class="navbar fixed-top navbar-expand-sm navbar-dark">
@@ -81,8 +81,8 @@
                     </li>
                 </ul> -->
                 <ul class="navbar-nav d-none d-md-block">
-                    <a href="javascript:void(0)" class="login btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">login</a>
-                    <a href="signup.html" class="signup btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">signup</a>
+                    <a href="login.html" class="login btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">login</a>
+                    <a href="javascript:void(0)" class="signup btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">signup</a>
                 </ul>
             </div>
         </nav>
@@ -90,36 +90,40 @@
 
         <!-- Login form section -->
         <section  class="Login-section">
-            <div class="container">
+            <div class="container mb-0">
                 <div class="row justify justify-content-center mt-3">
-                    <div class="col-12 mt-5 text-center">
-                        <h4 class="title text-capitalize"><span class="stand-out">Login </span> Here</h4>
+                    <div class="col-12 mt-4 text-center mb-0">
+                        <h4 class="title text-capitalize">Account <span class="stand-out">Registration </span></h4>
                     </div>
                 </div>
             </div>
-            <div class="reserve  d-flex justify-content-center">
-                <form id="Login" class="px-auto mx-auto">
-                    <div id="username-row" class="form-row justify-content-center">
+            <div class="reserve  d-flex justify-content-center mt-0">
+                <form id="signup" class="px-auto mx-auto">
+                    <div id="username-row"  class="form-row justify-content-center">
                         <div class="form-group col-md-6">
-                            <label for="fullname">Username/Email address :</label>
-                            <input type="text" class="form-control" name="username" placeholder="username/email-address"  id="username" required>
+                            <label for="fullname">Username :</label>
+                            <input type="text" minlength="2" class="form-control" name="username" placeholder="username"  id="uname" required>
                         </div>
                     </div>
-                    <div class="form-row justify-content-center py-md-2">
+                    <div id="email-row" class="form-row justify-content-center">
                         <div class="form-group col-md-6">
-                            <label for="fullname">password :</label>
-                            <input type="password" class="form-control" name="password" placeholder="password" id="password" required>
+                            <label for="fullname">Email address :</label>
+                            <input type="email" class="form-control" placeholder="email-address" name="email"  id="address" required>
                         </div>
                     </div>
-                    <div class="form-row justify-content-center">
-                        <div class="form-group col-md-6">
-                            <input type="checkbox" value="RememberMe" id="rememberMe">
-                            <label for="rememberMe">Remember me</label>
+                    <div id="password-row"  class="form-row justify-content-center">
+                        <div class="form-group col-md-3 pr-md-3">
+                            <label for="first-name">Password:</label>
+                            <input type="password" class="form-control" placeholder="password" name="password"  id="first-name" required>
+                        </div>
+                        <div id="confirm-row" class="form-group col-md-3 pl-md-3">
+                            <label for="last-name">Confirm password:</label>
+                            <input type="password" class="form-control" placeholder="confirm password" name="confirm_password" id="last-name" required>
                         </div>
                     </div>
-                    <div id="submit" class="form-row justify-content-center mt-3">
+                    <div class="form-row justify-content-center mt-3">
                         <div class="form-group col-md-6">
-                            <button type="submit" class="form-control btn coloured-btn font-weight-bold">Login</button>
+                            <button id="submit" type="submit" class="form-control btn coloured-btn font-weight-bold">Signup</button>
                         </div>
                     </div>
                 </form>

@@ -280,8 +280,15 @@ select#qty-select:focus{
 #logo{
     color: var(--tangerine) !important;
 }
-a.reserve-call{
-    width: 8rem;
+a.login{
+    width: 4.5rem;
+    max-height: 1.8rem;
+    border-radius: 50px 0 0 50px;
+}
+a.signup{
+    width: 4.5rem;
+    max-height: 1.8rem;
+    border-radius: 0 50px 50px 0;
 }
 #cart-responsive{
     display: none;
@@ -1228,6 +1235,12 @@ blockquote{
     color: #fff;
     font-size: 0.9rem;
 }
+#footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
 /* end of footer section styling */
 
 
@@ -2101,5 +2114,11 @@ tbody .col{
         -o-transform: scale(1.03);
         transform: scale(1.03);
     }
+}
+.Login-section{
+    padding: 2.8rem 0.5rem;
+}
+.client-reservations{
+    padding: 6rem 0.5rem;
 }
 /* end of single pages styling */
