@@ -429,12 +429,38 @@ $(function () {
             }
         });
     });
-    //fetch reservations
+    // function getCookie(name) {
+    //     let cookie = {};
+    //     document.cookie.split(';').forEach(function(el) {
+    //       let [k,v] = el.split('=');
+    //       cookie[k.trim()] = v;
+    //     })
+    //     return cookie[name];
+    // }
+    function getCookie(name){
+        let cookies = window.document.cookie.split(";")
+        let cookieVal;
+        for (let element of cookies) {
+            value = element.split("=");
+            if (value[0] == name) {
+                cookieVal = value[1];
+                break;
+            }
+        }
+        return cookieVal
+    }
+    
+    //fetch reservations for logged in user
+    let token = getCookie("csrf_access_token");
+    console.log(token);
     $('.get-reservations').on('click', function () {
         let reservationsUrl = "http://127.0.0.1:5000/api/v1/reservations"
         fetch(reservationsUrl,{
             mode: "cors",
-            credentials: "include"
+            credentials: "include",
+            headers: {
+                "x-csrf-token": token
+            }
         }).then( response => {
             return response.json();
         }).then( data => {
