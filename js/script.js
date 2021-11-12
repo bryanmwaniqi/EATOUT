@@ -555,7 +555,7 @@ $(function () {
             }
         }).catch(error => {
             if ($('.form-row').length == 4) {
-                let err = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${error}</div></div></div>`;
+                let err = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">something went wrong when connecting to server</div></div></div>`;
                 $(err).insertBefore('#submit');
             } else {
                 return false;
@@ -624,10 +624,6 @@ $(function () {
             console.log(error);
         })
     }
-
-    // test user trial button
-    const verifyUrl = "http://127.0.0.1:5000/api/v1/verify"
-    $('.current-user').on('click', verify)
 
     // checkout link functionality
     $('#checkout-btn').on('click', function () {
