@@ -32,9 +32,9 @@
     </head>
     <body>
         <!-- loader -->
-        <div class="loader">
+        <!-- <div class="loader">
             <div class="pre-loader"></div>
-        </div>
+        </div> -->
         
         <!-- navigation section -->
         <nav class="navbar fixed-top navbar-expand-sm navbar-dark">
@@ -85,8 +85,9 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav d-none d-md-block mt-2 mt-lg-0">
-                    <a href="login.html" class="login btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">login</a>
-                    <a href="signup.html" class="signup btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">signup</a>
+                    <a href="login.html" class="logged-out d-none login btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">login</a>
+                    <a href="signup.html" class="logged-out d-none signup btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">signup</a>
+                    <button id="logout" class="logged-in d-none btn coloured-btn btn-sm mt-2 font-weight-bold">logout</button>
                 </ul>
             </div>
         </nav>

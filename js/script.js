@@ -6,6 +6,21 @@ $(function () {
     //     },2500);
     // });
 
+    // localStorage.removeItem("shoppingcart")
+    var isLoggedIn = localStorage.getItem('loggedin');
+    var token;
+    var cart = [];
+    updateTally()
+    
+
+    if (isLoggedIn) {
+        $('a.logged-out').addClass('d-none');
+        $('button.logged-in').removeClass('d-none');
+    } else {
+        $('a.logged-out').removeClass('d-none');
+        $('.logged-in').addClass('d-none');
+    }
+
     // box shadow on scroll logic
     $(window).scroll(function () {
         $('nav.navbar').toggleClass('scrolled', $(this).scrollTop() > 80);
@@ -240,6 +255,95 @@ $(function () {
         $('.' + activeRadio).show();
     });
 
+    // shopping cart catalog
+    shoppingCartList = $('#cart-body')
+    cartOutput = "";
+    let orderTotal = 0;
+    let cartCatalog = products => {
+        if (localStorage.getItem("shoppingcart")) { 
+            products.forEach(product => {
+                cartOutput += `
+                <tr>
+                    <td class="cart-product d-flex align-middle">
+                        <img id="" class="circular cart-image mr-4" src="${product.image_url}" alt="${product.name} flavoured pizza image"> 
+                        <div class="d-flex flex-column p-0">
+                            <h5>${product.name}</h5>
+                            <p class="mb-1 text-muted">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Maiores facilis  
+                            </p>
+                            <span class="tangerine">$${product.price}</span>
+                        </div>  
+                    </td>
+                    <td class="align-middle">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span id="subtraction" class="mb-0 mr-2 font-weight-bold" aria-label="decrement">&lt;</span>
+                            <p class="product-tally mx-1 px-auto mb-0 py-auto">${product.product_tally}</p>
+                            <span id="addition"  class="ml-2 font-weight-bold" aria-label="increment">&gt;</span>
+                        </div>
+                    </td>
+                    <td  id="item-subtotal" class="font-weight-bold tangerine align-middle">
+                        $${product.price * product.product_tally} 
+                    </td>
+                    <td  class="bin align-middle">
+                        <i class="fas fa-trash-alt fa-lg text-muted delete"></i>
+                    </td>
+                </tr>
+            `;
+            orderTotal += (product.price * product.product_tally)
+            });
+        } 
+        if (cartOutput.length === 0) {
+            cartOutput += ` 
+            <tr>
+                <td colspan="4"><h4 class="mt-5 mb-4">Your cart is empty. navigate to <a href="menu.html">menu</a> page to shop</h4></td>
+            </tr>
+            `
+        }
+        shoppingCartList.append(cartOutput);
+        $('span.overall-total').append(orderTotal)
+    }
+    cartCatalog(JSON.parse(localStorage.getItem("shoppingcart")));
+
+    // deleting item from cart
+    $('.delete').on('click', function (e) {
+        let targetName = $(this).parent().siblings('td.cart-product').children('div').children('h5').text();
+        // console.log(targetName)
+        let shoppinglist = JSON.parse(localStorage.getItem('shoppingcart'));
+        let result = shoppinglist.filter( product => product.name !== targetName);
+        localStorage.setItem('shoppingcart', JSON.stringify(result));
+        location.reload();
+    })
+    // incrementing product tally
+    $('span#addition').on('click', function (e) {
+        let targetName = $(this).parent().parent().siblings('td.cart-product').children('div').children('h5').text()
+        let shoppinglist = JSON.parse(localStorage.getItem('shoppingcart'));
+        shoppinglist.forEach(function (product) {
+            if (targetName === product.name) {
+                product.product_tally += 1;
+            }
+        })
+        localStorage.setItem('shoppingcart', JSON.stringify(shoppinglist))
+        location.reload()
+    })
+
+    // decrementing product tally 
+    $('span#subtraction').on('click', function (e) {
+        let targetName = $(this).parent().parent().siblings('td.cart-product').children('div').children('h5').text()
+        let shoppinglist = JSON.parse(localStorage.getItem('shoppingcart'));
+        shoppinglist.forEach(function (product) {
+            if (targetName === product.name) {
+                if (product.product_tally > 1) {
+                    product.product_tally -= 1;
+                } else {
+                    shoppinglist.splice(shoppinglist.indexOf(product), 1)
+                }  
+            }
+        })
+        localStorage.setItem('shoppingcart', JSON.stringify(shoppinglist))
+        location.reload()
+    })
+
     // fetching meal products resources
     mealsList = $('.meals');
     let url = "http://127.0.0.1:5000/api/v1/meals";
@@ -258,11 +362,11 @@ $(function () {
                     </div>
                     <div class="meal-text">
                         <h6 class="font-weight-bold my-2">${product.name}</h6>
-                        <span class="font-weight-bold">$${product.price}</span>
+                        <span class="font-weight-bold">$ <span>${product.price}</span></span>
                         <p class="">
                             ${product.description}
                         </p>
-                        <button class="btn regular-btn"><i class="fas fa-shopping-bag fa-sm tangerine mr-2"></i> Add to Cart</button>  
+                        <button class="btn regular-btn cart"><i class="fas fa-shopping-bag fa-sm tangerine mr-2"></i> Add to Cart</button>  
                     </div>
                 </div>
             </div>
@@ -334,6 +438,32 @@ $(function () {
                 }
             });
         }); 
+        $("button.cart").on('click', function (e) {
+            let item = {
+                name: $(this).siblings('h6').text(),
+                product_tally: 1,
+                image_url: $(this).parent().siblings('div').children().children().children().attr('src'),
+                price: $(this).siblings('span').children('span').text()
+            }
+            if (JSON.parse(localStorage.getItem("shoppingcart")) === null) {
+                cart.push(item);
+                localStorage.setItem("shoppingcart", JSON.stringify(cart));
+            } else {
+                let items = [];
+                const cartItems = JSON.parse(localStorage.getItem('shoppingcart'));
+                cartItems.map( dataItem => {
+                    if (item.name === dataItem.name) {
+                        item.product_tally = dataItem.product_tally + 1;
+                    } else {
+                        items.push(dataItem);
+                    }
+                })
+                items.push(item);
+                localStorage.setItem("shoppingcart", JSON.stringify(items));
+                console.log(JSON.parse(localStorage.getItem('shoppingcart')))
+            }
+            updateTally()
+        });
     });
 
     // Login/fetch authorization token
@@ -358,16 +488,20 @@ $(function () {
                 if ($('.form-row').length == 4){
                     let failAuth = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${data.message}</div></div></div>`;
                     $(failAuth).insertBefore('#submit');
-                    // $('form#Login').reset();
                 }
                 $('form#Login').reset();
             } else {
-                // location.replace('offers-landing.html');
+                localStorage.setItem('loggedin', 1)
+                localStorage.setItem('username', data.username)
+                isLoggedIn = localStorage.getItem('loggedin');
+                $('a.logged-out').addClass('d-none');
+                $('button.logged-in').removeClass('d-none');
+                location.replace('offers-landing.html');
                 console.log(data);
             } 
         }).catch(error => {
             if ($('.form-row').length == 4) {
-                let err = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${error}</div></div></div>`;
+                let err = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">something went wrong when connecting to server</div></div></div>`;
                 $(err).insertBefore('#submit');
             } else {
                 return false;
@@ -382,7 +516,6 @@ $(function () {
         let formData = new FormData(e.target);
         let signupPayload = {};
         formData.forEach((value, key) => (signupPayload[key] = value));
-        // console.log(signupPayload);
         fetch(signupUrl, {
             mode: "cors",
             method: "POST",
@@ -429,14 +562,6 @@ $(function () {
             }
         });
     });
-    // function getCookie(name) {
-    //     let cookie = {};
-    //     document.cookie.split(';').forEach(function(el) {
-    //       let [k,v] = el.split('=');
-    //       cookie[k.trim()] = v;
-    //     })
-    //     return cookie[name];
-    // }
     function getCookie(name){
         let cookies = window.document.cookie.split(";")
         let cookieVal;
@@ -451,9 +576,8 @@ $(function () {
     }
     
     //fetch reservations for logged in user
-    let token = getCookie("csrf_access_token");
-    console.log(token);
     $('.get-reservations').on('click', function () {
+        token = getCookie("csrf_access_token");
         let reservationsUrl = "http://127.0.0.1:5000/api/v1/reservations"
         fetch(reservationsUrl,{
             mode: "cors",
@@ -469,4 +593,86 @@ $(function () {
             console.log(error);
         })
     })
+
+    // test current user function
+    function verify() {
+        token = getCookie("csrf_access_token");
+        fetch(verifyUrl,{
+            mode: "cors",
+            credentials: "include",
+            headers: {
+                "x-csrf-token": token
+            }
+        }).then( response => {
+            return response.json();
+        }).then( data => {
+            if (data.status == "logged-in") {
+                localStorage.setItem('loggedin', 1)
+                localStorage.setItem('username', data.username)
+                isLoggedIn = localStorage.getItem('loggedin')
+                $('a.logged-out').addClass('d-none');
+                $('button.logged-in').removeClass('d-none');
+            } else {
+                localStorage.removeItem('username');
+                localStorage.removeItem('loggedin');
+                isLoggedIn = localStorage.getItem('loggedin')
+                $('a.logged-out').removeClass('d-none');
+                $('.logged-in').addClass('d-none');
+            }
+            console.log(data);
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+
+    // test user trial button
+    const verifyUrl = "http://127.0.0.1:5000/api/v1/verify"
+    $('.current-user').on('click', verify)
+
+    // checkout link functionality
+    $('#checkout-btn').on('click', function () {
+        verify();
+        if (isLoggedIn) {
+            location.replace('checkout.html');
+            console.log(isLoggedIn)
+        } else {
+            location.replace('login.html');
+        }
+    })
+
+
+    // logout functionality
+    const logoutUrl = "http://127.0.0.1:5000/api/v1/logout"
+    $('button#logout').on('click', function (e) {
+        token = getCookie("csrf_access_token");
+        fetch(logoutUrl,{
+            mode: "cors",
+            credentials: "include",
+            headers: {
+                "x-csrf-token": token
+            }
+        }).then( response => {
+            return response.json()
+        }).then( data => {
+            localStorage.removeItem('username')
+            localStorage.removeItem('loggedin')
+            $('a.logged-out').removeClass('d-none');
+            $('.logged-in').addClass('d-none');
+            console.log(data);
+        }).catch(error => {
+            console.log(error);
+        })
+    })
+
+    // shopping cart icon tally functionality
+    function updateTally() {
+        if (localStorage.getItem("shoppingcart") !== null) {
+            cartTally = $('.cart-item');
+        let tally = 0
+        JSON.parse(localStorage.getItem("shoppingcart")).map(data => {
+            tally = tally + data.product_tally
+        })
+        cartTally.html(tally)
+        }
+    }   
 });

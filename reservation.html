@@ -39,9 +39,9 @@
             </a>
             <ul class="navbar-nav" id="cart-responsive">
                 <li class="nav-item cart-items">
-                    <a class="nav-link" href="cart.html">
-                        <i class="fas fa-shopping-bag my-auto mt-4 mr-1" aria-hidden="true"></i>
-                        <span class="cart-items text-lowercase mr-2">3 items</span>
+                    <a class="nav-link d-flex pt-3" href="cart.html">
+                        <i class="fas fa-shopping-bag fa-lg my-auto mt-4 mr-1" aria-hidden="true"></i>
+                        <span class="cart-item text-lowercase text-center">0</span>
                     </a>
                 </li>
             </ul>
@@ -72,17 +72,18 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                 </ul>
-                <!-- <ul class="navbar-nav d-none d-sm-block">
+                <ul class="navbar-nav d-none d-sm-block">
                     <li class="nav-item cart-items">
-                        <a class="nav-link pt-3" href="cart.html">
+                        <a class="nav-link d-flex pt-3" href="cart.html">
                             <i class="fas fa-shopping-bag fa-lg my-auto mt-4 mr-1" aria-hidden="true"></i>
-                            <span class="cart-items text-lowercase mr-2">3 items</span>
+                            <span class="cart-item text-lowercase text-center">0</span>
                         </a>
                     </li>
-                </ul> -->
+                </ul>
                 <ul class="navbar-nav d-none d-md-block">
-                    <a href="javascript:void(0)" class="login btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">login</a>
-                    <a href="signup.html" class="signup btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">signup</a>
+                    <a href="login.html" class="logged-out d-none login btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">login</a>
+                    <a href="signup.html" class="logged-out d-none signup btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">signup</a>
+                    <button id="logout" class="logged-in d-none btn coloured-btn btn-sm mt-2 font-weight-bold">logout</button>
                 </ul>
             </div>
         </nav>

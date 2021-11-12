@@ -290,6 +290,10 @@ a.signup{
     max-height: 1.8rem;
     border-radius: 0 50px 50px 0;
 }
+#logout{
+    width: 5rem;
+    max-height: 1.8rem;
+}
 #cart-responsive{
     display: none;
 }
@@ -303,9 +307,22 @@ a.signup{
         font-size: 0.8rem;
     }
 }
-.cart-items:hover span{
-    color: var(--tangerine);
+.cart-item{
+    position: relative;
+    border-radius: 100%;
+    font-size: 0.7rem;
+    min-width: 1.4rem;
+    height: 1.4rem;
+    background-color: var(--text-color);
+    left: -0.8rem;
+    top: -0.6rem;
+    padding-bottom: 0.1rem;
+    color: var(--primary-color);
+    
 }
+/* .cart-items:hover span{
+    color: var(--tangerine);
+} */
 /* end of navigation */
 
 /* slider section styling */
@@ -2120,5 +2137,12 @@ tbody .col{
 }
 .client-reservations{
     padding: 6rem 0.5rem;
+}
+span#addition, span#subtraction{
+    color: rgb(131, 131, 131);
+}
+span#addition:hover, span#subtraction:hover{
+    cursor: pointer;
+    color: var(--tangerine);
 }
 /* end of single pages styling */
