@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Eatout</title>
+
+         <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Bait themes">
+        <meta name="description" content="Eatout | Pizza restaurant chain landing page template">
+        <meta name="keywords" content="bait themes, eatout, pizza, fast food, pizzeria, pizza restaurant chain, takeout">
+
+        <!-- favicon -->
+        <link rel="icon" href="assets/eatout-thumbnail.png">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- owl carousel CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+        <!-- fontawesome css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+        
+        <!-- custom css -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- loader -->
+        <!-- <div class="loader">
+            <div class="pre-loader"></div>
+        </div> -->
+        
+        <!-- navigation section -->
+        <nav class="navbar fixed-top navbar-expand-sm navbar-dark">
+            <a class="navbar-brand font-weight-bold" id="logo" href="offers-landing.html"> 
+                <img src="assets/eatout-logo.png" alt="eatout pizza restaurant logo">
+            </a>
+            <ul class="navbar-nav" id="cart-responsive">
+                <li class="nav-item cart-items">
+                    <a class="nav-link d-flex pt-3" href="cart.html">
+                        <i class="fas fa-shopping-bag fa-lg my-auto mt-4 mr-1" aria-hidden="true"></i>
+                        <span class="cart-item text-lowercase text-center">0</span>
+                    </a>
+                </li>
+            </ul>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mr-auto mt-2 mt-lg-0 ">
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="fullscreen-slider.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="cuisines.html">Cuisines</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="menu.html">Outlets</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="blog.html">blog</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-none d-sm-block">
+                    <li class="nav-item cart-items">
+                        <a class="nav-link d-flex pt-3" href="cart.html">
+                            <i class="fas fa-shopping-bag fa-lg my-auto mt-4 mr-1" aria-hidden="true"></i>
+                            <span class="cart-item text-lowercase text-center">0</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-none d-md-block mt-2 mt-lg-0">
+                    <a href="login.html" class="logged-out d-none login btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">login</a>
+                    <a href="signup.html" class="logged-out d-none signup btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">signup</a>
+                    <button id="logout" class="logged-in d-none btn coloured-btn btn-sm mt-2 font-weight-bold">logout</button>
+                </ul>
+            </div>
+        </nav>
+        <!-- navigation section end -->  
+
+        <!-- food product section-->
+        <section class="product">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-7 mb-5 img-col">
+                        <div class="image-wrapper product-image-wrapper mx-auto my-auto">
+                            <img id="infocus-product" class="circular product-img" src="assets/mozarella-pizza.jpg" alt="mozarella flavoured pizza image">
+                        </div>
+                        <div class="offer-tag product-offer-tag d-flex flex-column align-items-center justify-content-center">
+                            <span class="">20%</span>
+                            <span class="off text-uppercase">off</span>
+                        </div>
+                        <div id="four-items-carousel" class="owl-carousel owl-theme ">
+                            <div class="item image-wrapper product-variation">
+                                <img id="variant-1" src="assets/mozarella-pizza.jpg" class="product-img circular" alt="mozarella flavoured pizza image">
+                            </div>
+                            <div class="item image-wrapper product-variation">
+                                <img id="variant-2" src="assets/pepperoni-pizza.jpg" class="product-img circular" alt="pepperoni flavoured pizza image">
+                            </div>
+                            <div class="item image-wrapper product-variation">
+                                <img id="variant-3" src="assets/french-pizza-cuisine.jpg" class="product-img circular" alt="french pizza cuisine image">
+                            </div>
+                            <div class="item image-wrapper product-variation">
+                                <img id="variant-4" src="assets/margherita-pizza.jpg" class="product-img circular" alt="margherita flavoured pizza image">
+                            </div>
+                            <div class="item image-wrapper product-variation">
+                                <img id="variant-5" src="assets/hawaian.jpg" class="product-img circular" alt="">
+                            </div>
+                            <div class="item image-wrapper product-variation">
+                                <img id="variant-6" src="assets/hawaiian-pizza.jpg" class="product-img circular" alt="hawaiian flavoured pizza image">
+                            </div>
+                            <div class="item image-wrapper product-variation">
+                                <img id="variant-7" src="assets/pan-pizza.jpg" class="product-img circular" alt="">
+                            </div>
+                            <div class="item image-wrapper product-variation">
+                                <img id="variant-8" src="assets/cuisine3.jpg" class="product-img circular" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 d-flex flex-column align-items-start justify-content-center">
+                        <h4 class="mb-0">Mozarella</h4>
+                        <div class="reviews d-flex align-items-center align-self-stretch mt-0">
+                            <div class="rating py-2 ">
+                                <i class="fas fa-star fa-sm checked"></i>
+                                <i class="fas fa-star fa-sm checked"></i>
+                                <i class="fas fa-star fa-sm checked"></i>
+                                <i class="fas fa-star fa-sm checked"></i>
+                                <i class="fas fa-star fa-sm"></i>
+                            </div>
+                            <span class="ml-2 h5 align-self-end mr-auto">4.5/5</span>
+                            <a class="ml-auto text-muted" id="reviews-link" href="#feedback">read reviews</a>
+                        </div>
+                        <p class="text-muted">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit quasite. 
+                            Perspiciatis soluta excepturi a tempora perferendis alias, enim 
+                            ut suscipit numquam, dolore debitis nesciunt, temporibus. 
+                        </p>
+                        <h5 class="">Size</h5>
+                        <div class="sizes d-flex align-self-stretch justify-content-between pr-md-5 pb-3">
+                            <label for="small" class="radio-group d-flex align-items-center text-muted">
+                                <input type="radio" name="size" id="small" class="default-radio">
+                                <div class="custom-radio d-flex align-items-center justify-content-center"></div>
+                                small
+                            </label>
+                            <label for="medium" class="radio-group d-flex align-items-center text-muted">
+                                <input type="radio" name="size" id="medium" class="default-radio">
+                                <div class="custom-radio d-flex align-items-center justify-content-center"></div>
+                                medium
+                            </label>
+                            <label for="large" class="radio-group d-flex align-items-center text-muted">
+                                <input type="radio" name="size" id="large" class="default-radio">
+                                <div class="custom-radio d-flex align-items-center justify-content-center"></div>
+                                large
+                            </label>
+                        </div>
+                        <h5 class="">Add ons</h5>
+                        <label for="cheese" class="checkbox-group d-flex text-muted align-items-center align-self-stretch justify-content-between pr-md-5">
+                            Extra cheese
+                            <input type="checkbox" id="cheese" class="default-checkbox">
+                            <div class="d-flex align-items-center justify-content-center custom-checkbox"></div>
+                        </label>
+                        <label for="pepper" class="checkbox-group d-flex text-muted align-items-center align-self-stretch justify-content-between pr-md-5">
+                            Black pepper
+                            <input type="checkbox" id="pepper" class="default-checkbox">
+                            <div class="d-flex align-items-center justify-content-center custom-checkbox"></div>
+                        </label>
+                        <label for="sauce" class="checkbox-group d-flex text-muted align-items-center align-self-stretch justify-content-between pr-md-5 pb-3">
+                            Extra herbs sauce
+                            <input type="checkbox" id="sauce" class="default-checkbox">
+                            <div class="d-flex align-items-center justify-content-center custom-checkbox"></div>
+                        </label>
+                        <h5>Quantity</h5>
+                        <select name="product-quantity" id="qty-select" class="form-control">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                            <option value="">6</option>
+                            <option value="">7</option>
+                            <option value="">8</option>
+                            <option value="">9</option>
+                            <option value="">10</option>
+                        </select>
+                        <div id="prices-sect" class="align-items-center d-flex cart-container mt-3">
+                            <div class="d-flex mr-5 align-items-center prices">
+                                <span class="text-muted h6">$12.00</span>
+                                <span class="tangerine ml-3 font-weight-bold h2">$9.00</span>
+                                <div class="cross text-muted" id="cross-1"></div>
+                                <div class="cross text-muted" id="cross-2"></div>
+                            </div>
+                            <button class="btn coloured-btn align-self-start flex-grow-0 flex-shrink-0"> 
+                                <i class="fas fa-shopping-bag text-white mr-2" aria-hidden="true"></i> 
+                                Add to Cart
+                            </button>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+            <div id="feedback" class="feedback">
+                <div class="container">
+                    <div class="row justify justify-content-center">
+                        <div class="col-12 mb-3 text-center">
+                            <h4 class="title text-capitalize">customer <span class="stand-out">Feedback</span></h4>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-8 col-lg-7 mb-5">
+                            <p class="text-center mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur consectetur voluptatum accusamus incidunt 
+                                tempora repellendus quia sint voluptatibus soluta laboriosam?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-3">
+                        <div id="reviews-carousel" class="owl-carousel owl-theme">
+                            <div class="item px-sm-5 px-2">  
+                                <div class="row justify-content-center align-items-center px-md-5">
+                                    <div class="col-md-4">
+                                        <div class="image-wrapper client-review-wrapper mx-auto">
+                                            <img src="assets/girl-client.jpg" alt="" class="product-img circular">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 d-flex flex-column pr-md-4 align-items-center align-items-md-start">
+                                        <h6 class="font-weight-bold mt-4 mb-2">Excellent</h6>
+                                        <div class="rating py-2">
+                                            <i class="fas fa-star fa-sm checked"></i>
+                                            <i class="fas fa-star fa-sm checked"></i>
+                                            <i class="fas fa-star fa-sm checked"></i>
+                                            <i class="fas fa-star fa-sm checked"></i>
+                                            <i class="fas fa-star fa-sm"></i>
+                                        </div>
+                                        <p class="text-center text-md-left">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                            Recusandae animi nobis pariatur illum? Ab omnis minima fugit 
+                                            voluptatum libero hic temporibus nostrum, itaque non soluta 
+                                            explicabo facilis blanditiis, praesentium, 
+                                            ipsum totam alias perferendis.
+                                        </p>
+                                        <span class="text-muted">Mitchy sakari - 25th Nov,2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item px-sm-5 px-2 mb-5">  
+                                <div class="row justify-content-center align-items-center px-md-5">
+                                    <div class="col-md-4">
+                                        <div class="image-wrapper client-review-wrapper mx-auto">
+                                            <img src="assets/happy-lady.jpg" alt="" class="product-img circular">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 d-flex flex-column pr-md-4 align-items-center align-items-md-start">
+                                        <h6 class="font-weight-bold mt-4 mb-2">Yummy</h6>
+                                        <div class="rating py-2">
+                                            <i class="fas fa-star fa-sm checked"></i>
+                                            <i class="fas fa-star fa-sm checked"></i>
+                                            <i class="fas fa-star fa-sm checked"></i>
+                                            <i class="fas fa-star fa-sm checked"></i>
+                                            <i class="fas fa-star fa-sm checked"></i>
+                                        </div>
+                                        <p class="text-center text-md-left">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                            Recusandae animi nobis pariatur illum? Ab omnis minima fugit 
+                                            voluptatum libero hic temporibus nostrum, itaque non soluta 
+                                            explicabo facilis blanditiis, praesentium, 
+                                            ipsum totam alias perferendis.
+                                        </p>
+                                        <span class="text-muted">Stacy leilan - 25th Nov,2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="row justify justify-content-center">
+                <div class="col-12 mb-3  mt-5 text-center">
+                    <h4 class="title text-capitalize"><span class="stand-out">Related</span> products</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-11 col-md-8 col-lg-7 mb-5">
+                    <p class="text-center mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur consectetur voluptatum accusamus incidunt 
+                        tempora repellendus quia sint voluptatibus soluta laboriosam?
+                    </p>
+                </div>
+            </div>
+            
+            <div id="related-products" class="owl-carousel owl-theme">
+                <div class="item d-flex flex-column align-items-center text-center mb-5">  
+                    <div class="product-description">
+                        <div class="image-wrapper carousel-product-wrapper mx-auto">
+                            <img src="assets/pepperoni-pizza.jpg" alt="pepperoni flavoured pizza image" class="product-img circular">
+                        </div>
+                        <h6 class="font-weight-bold mt-4 mb-2">cheesy pepperoni</h6>
+                        <span class="font-weight-bold tangerine">$14.11</span>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione corporis nulla, quam magnam modi delectus.
+                        </p>
+                        <button class="btn coloured-btn my-0"><i class="fas fa-shopping-bag text-white mr-2" aria-hidden="true"></i>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="item d-flex flex-column align-items-center text-center">
+                    <div class="product-description">
+                        <div class="image-wrapper carousel-product-wrapper mx-auto ">
+                            <img src="assets/margherita-pizza.jpg" alt="margherita flavoured pizza image" class="product-img circular">
+                        </div>
+                        <h6 class="font-weight-bold mb-2 mt-4">sumptuous margherita</h6>
+                        <span class="font-weight-bold tangerine">$12.50</span>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione corporis nulla, quam magnam modi delectus.
+                        </p>
+                        <button class="btn coloured-btn my-0"><i class="fas fa-shopping-bag text-white mr-2" aria-hidden="true"></i>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="item d-flex flex-column align-items-center text-center">
+                    <div class="product-description">
+                        <div class="image-wrapper carousel-product-wrapper mx-auto">
+                            <img src="assets/multiflavour-pizza.jpg" alt="" class="product-img circular">
+                        </div>
+                        <h6 class="font-weight-bold mt-4 mb-2">multiflavour pizza</h6>
+                        <span class="font-weight-bold tangerine">$17.50</span>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione corporis nulla, quam magnam modi delectus.
+                        </p>
+                        <button class="btn coloured-btn my-0"><i class="fas fa-shopping-bag text-white mr-2" aria-hidden="true"></i>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="item d-flex flex-column align-items-center text-center">
+                    <div class="product-description">
+                        <div class="image-wrapper carousel-product-wrapper mx-auto mb-2">
+                            <img src="assets/mozarella-pizza.jpg" alt="mozarella flavoured pizza image" class="product-img circular">
+                        </div>
+                        <h6 class="font-weight-bold mt-4 mb-2">tasty mozarella</h6>
+                        <span class="font-weight-bold tangerine">$13.50</span>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione corporis nulla, quam magnam modi delectus.
+                        </p>
+                        <button class="btn coloured-btn my-0"><i class="fas fa-shopping-bag text-white mr-2" aria-hidden="true"></i>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Footer section -->
+        <footer class="footer-section">
+            <div class="row align-items-center">
+                <div class="col-md-4 col-sm-6 d-flex mt-3 mb-3 mb-md-0 justify-content-center justify-content-sm-start">
+                    <i class="fas fa-phone text-white mt-1"></i>
+                    <span class="text-white ml-2">+254 999 888 000</span>
+                    <span class="text-white font-weight-bold ml-2">Order Now</span>
+                </div>
+                <div class="col-md-4 col-sm-6 d-flex social-icons justify-content-center justify-content-sm-end ">
+                    <div class="socials d-flex align-items-center justify-content-center mr-4 ml-sm-auto">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div class="socials d-flex align-items-center justify-content-center mr-4">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="socials d-flex align-items-center justify-content-center mr-4">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="socials d-flex align-items-center justify-content-center mr-md-4 mr-md-auto">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-snapchat"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
+                    <span class="copyright">© Copyright Brian Mwaniki 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer section -->
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="js/script.js"></script>    
+    </body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Eatout</title>
+
+         <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Bait themes">
+        <meta name="description" content="Eatout | Pizza restaurant chain landing page template">
+        <meta name="keywords" content="bait themes, eatout, pizza, fast food, pizzeria, pizza restaurant chain, takeout">
+
+        <!-- favicon -->
+        <link rel="icon" href="assets/eatout-thumbnail.png">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- fontawesome css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+        
+        <!-- custom css -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- loader -->
+        <!-- <div class="loader">
+            <div class="pre-loader"></div>
+        </div> -->
+        
+        <!-- navigation section -->
+        <nav class="navbar fixed-top navbar-expand-sm navbar-dark">
+            <a class="navbar-brand font-weight-bold" id="logo" href="index.html"> 
+                <img src="assets/eatout-logo.png" alt="eatout pizza restaurant logo">
+            </a>
+            <ul class="navbar-nav" id="cart-responsive">
+                <li class="nav-item cart-items">
+                    <a class="nav-link d-flex pt-3" href="cart.html">
+                        <i class="fas fa-shopping-bag fa-lg my-auto mt-4 mr-1" aria-hidden="true"></i>
+                        <span class="cart-item text-lowercase text-center">0</span>
+                    </a>
+                </li>
+            </ul>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mr-auto mt-2 mt-lg-0 ">
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item active" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="cuisines.html">Cuisines</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="outlets.html">Outlets</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="blog.html">blog</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-none d-sm-block">
+                    <li class="nav-item cart-items">
+                        <a class="nav-link d-flex pt-3" href="cart.html">
+                            <i class="fas fa-shopping-bag fa-lg my-auto mt-4 mr-1" aria-hidden="true"></i>
+                            <span class="cart-item text-lowercase text-center">0</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-none d-md-block mt-2 mt-lg-0">
+                    <a href="login.html" class="logged-out d-none login btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">login</a>
+                    <a href="signup.html" class="logged-out d-none signup btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">signup</a>
+                    <button id="logout" class="logged-in d-none btn coloured-btn btn-sm mt-2 font-weight-bold">logout</button>
+                </ul>
+            </div>
+        </nav>
+        <!-- navigation section end -->  
+        
+        <!-- banner section -->
+        <section class="banner">
+            <div class="banner-container d-flex justify-content-center align-items-center">
+                <div class="banner-caption d-flex flex-column justify-content-center align-items-center mt-3">
+                    <div class="row justify-content-center mt-2">
+                        <div class="col-12 mb-3 text-center">
+                            <h4 class="title text-capitalize text-white mb-1 mb-md-3">Sample our <span class="stand-out">Cuisines</span></h4>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-11 col-md-8 col-lg-7">
+                            <p class="text-center text-white">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                                Aspernatur consectetur voluptatum accusamus incidunt 
+                                tempora repellendus quia sint voluptatibus soluta laboriosam?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+        <!-- end of banner section -->
+
+        <section class="pizza-cuisines">
+            <div class="cuisine-1">
+                <div class="container mb-5">
+                    <div class="row mb-5">
+                        <div class="col-md-6">
+                            <h4 class="title text-capitalize mb-3"><span class="stand-out">Italian</span> cuisine</h4>
+                            <p class="text-left">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Sapiente dolore dolores eius unde aliquam eum, incidunt, 
+                                ullam libero ducimus minus neque impedit. Est repellendus impedit 
+                                ullam esse architecto vitae ratione aspernatur magni ipsa dicta. 
+                                Nam delectus nihil unde officia, accusantium, ipsum repellat natus 
+                                architecto rem amet soluta earum maiores, minus alias. 
+                                Esse velit cum dolor minima explicabo repellat accusantium expedita?
+                            </p>
+                        </div>
+                        <div class="col gallery d-flex flex-wrap justify-content-center mb-5">
+                            <div class="gallery-image">
+                                <img class="" src="assets/pepperoni-pizza.jpg" alt="pepperoni flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/hawaiian-pizza.jpg" alt="hawaiian flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/margherita-pizza.jpg" alt="margherita flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/mozarella-pizza.jpg" alt="mozarella flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/veggie-pizza.jpg" alt="vegetables pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/french-pizza-cuisine.jpg" alt="french pizza cuisine image">
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cuisine-2">
+                <div class="container mb-5">
+                    <div class="row mb-5">
+                        <div class="col-md-6 order-md-2">
+                            <h4 class="title text-capitalize mb-3"><span class="stand-out">Lourou</span> cuisine</h4>
+                            <p class="text-left">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Sapiente dolore dolores eius unde aliquam eum, incidunt, 
+                                ullam libero ducimus minus neque impedit. Est repellendus impedit 
+                                ullam esse architecto vitae ratione aspernatur magni ipsa dicta. 
+                                Nam delectus nihil unde officia, accusantium, ipsum repellat natus 
+                                architecto rem amet soluta earum maiores, minus alias. 
+                                Esse velit cum dolor minima explicabo repellat accusantium expedita?
+                            </p>
+                        </div>
+                        <div class="col-md-6 gallery d-flex flex-wrap justify-content-center mb-5">
+                            <div class="gallery-image">
+                                <img class="" src="assets/mozarella-pizza.jpg" alt="mozarella flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/veggie-pizza.jpg" alt="vegetables pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/multiflavour-pizza.jpg" alt="">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/pepperoni-pizza.jpg" alt="pepperoni flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/italian-pizza-cuisine.jpg" alt="italian pizza cuisine image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/margherita-pizza.jpg" alt="margherita flavoured pizza image">
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cuisine-3">
+                <div class="container mb-5">
+                    <div class="row mb-5">
+                        <div class="col-md-6">
+                            <h4 class="title text-capitalize mb-3"><span class="stand-out">Mexican</span> cuisine</h4>
+                            <p class="text-left">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Sapiente dolore dolores eius unde aliquam eum, incidunt, 
+                                ullam libero ducimus minus neque impedit. Est repellendus impedit 
+                                ullam esse architecto vitae ratione aspernatur magni ipsa dicta. 
+                                Nam delectus nihil unde officia, accusantium, ipsum repellat natus 
+                                architecto rem amet soluta earum maiores, minus alias. 
+                                Esse velit cum dolor minima explicabo repellat accusantium expedita?
+                            </p>
+                        </div>
+                        <div class="col gallery d-flex flex-wrap justify-content-center mb-5">
+                            <div class="gallery-image">
+                                <img class="" src="assets/pepperoni-pizza.jpg" alt="pepperoni flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/hawaiian-pizza.jpg" alt="hawaiian flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/margherita-pizza.jpg" alt="margherita flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/mozarella-pizza.jpg" alt="mozarella flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/multiflavour-pizza.jpg" alt="">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/veggie-pizza.jpg" alt="vegetables pizza image">
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cuisine-4">
+                <div class="container mb-5">
+                    <div class="row mb-5">
+                        <div class="col-md-6 order-md-2">
+                            <h4 class="title text-capitalize mb-3"><span class="stand-out">Indian</span> cuisine</h4>
+                            <p class="text-left">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Sapiente dolore dolores eius unde aliquam eum, incidunt, 
+                                ullam libero ducimus minus neque impedit. Est repellendus impedit 
+                                ullam esse architecto vitae ratione aspernatur magni ipsa dicta. 
+                                Nam delectus nihil unde officia, accusantium, ipsum repellat natus 
+                                architecto rem amet soluta earum maiores, minus alias. 
+                                Esse velit cum dolor minima explicabo repellat accusantium expedita?
+                            </p>
+                        </div>
+                        <div class="col-md-6 gallery d-flex flex-wrap justify-content-center mb-5">
+                            <div class="gallery-image">
+                                <img class="" src="assets/pepperoni-pizza.jpg" alt="pepperoni flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/hawaiian-pizza.jpg" alt="hawaiian flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/margherita-pizza.jpg" alt="margherita flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/mozarella-pizza.jpg" alt="mozarella flavoured pizza image">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/pizzaflour.jpg" alt="">
+                            </div>
+                            <div class="gallery-image">
+                                <img class="" src="assets/cuisine3.jpg" alt="">
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer section -->
+        <footer class="footer-section">
+            <div class="row align-items-center">
+                <div class="col-md-4 col-sm-6 d-flex mt-3 mb-3 mb-md-0 justify-content-center justify-content-sm-start">
+                    <i class="fas fa-phone text-white mt-1"></i>
+                    <span class="text-white ml-2">+254 999 888 000</span>
+                    <span class="text-white font-weight-bold ml-2">Order Now</span>
+                </div>
+                <div class="col-md-4 col-sm-6 d-flex social-icons justify-content-center justify-content-sm-end ">
+                    <div class="socials d-flex align-items-center justify-content-center mr-4 ml-sm-auto">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div class="socials d-flex align-items-center justify-content-center mr-4">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="socials d-flex align-items-center justify-content-center mr-4">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="socials d-flex align-items-center justify-content-center mr-md-4 mr-md-auto">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-snapchat"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
+                    <span class="copyright">© Copyright Brian Mwaniki 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer section -->
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="js/script.js"></script>    
+    </body>
+</html>
