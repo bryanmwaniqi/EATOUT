@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Eatout</title>
+
+         <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Bait themes">
+        <meta name="description" content="Eatout | Pizza restaurant chain landing page template">
+        <meta name="keywords" content="bait themes, eatout, pizza, fast food, pizzeria, pizza restaurant chain, takeout">
+
+        <!-- favicon -->
+        <link rel="icon" href="assets/eatout-thumbnail.png">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- owl carousel css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+        <!-- fontawesome css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+        
+        <!-- custom css -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- loader -->
+        <!-- <div class="loader">
+            <div class="pre-loader"></div>
+        </div> -->
+        
+        <!-- navigation section -->
+        <nav class="navbar fixed-top navbar-expand-sm navbar-dark">
+            <a class="navbar-brand font-weight-bold" id="logo" href="offers-landing.html"> 
+                <img src="assets/eatout-logo.png" alt="eatout pizza restaurant logo">
+            </a>
+            <ul class="navbar-nav" id="cart-responsive">
+                <li class="nav-item cart-items">
+                    <a class="nav-link d-flex pt-3" href="cart.html">
+                        <i class="fas fa-shopping-bag fa-lg my-auto mt-4 mr-1" aria-hidden="true"></i>
+                        <span class="cart-item text-lowercase text-center">0</span>
+                    </a>
+                </li>
+            </ul>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mr-auto mt-2 mt-lg-0 ">
+                    <li class="nav-item active" data-toggle="collapse"  data-target=".navbar-collapse.show">
+                        <a class="nav-link" href="offers-landing.html">Offers <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="cuisines.html">Cuisines</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="outlets.html">Outlets</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="blog.html">blog</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-none d-sm-block">
+                    <li class="nav-item cart-items">
+                        <a class="nav-link d-flex pt-3" href="cart.html">
+                            <i class="fas fa-shopping-bag fa-lg my-auto mt-4 mr-1" aria-hidden="true"></i>
+                            <span class="cart-item text-lowercase text-center">0</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-none d-md-block">
+                    <a href="login.html" class="logged-out d-none login btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">login</a>
+                    <a href="signup.html" class="logged-out d-none signup btn coloured-btn mt-2 btn-sm font-weight-bold" role="button">signup</a>
+                    <button id="logout" class="logged-in d-none btn coloured-btn btn-sm mt-2 font-weight-bold">logout</button>
+                </ul>
+            </div>
+        </nav>
+        <!-- navigation section end -->
+
+        <!-- offers landing section -->
+        <section class="offers-landing">
+            <div class="split"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mt-5 d-none d-md-block">
+                            <h4 class="title text-capitalize mb-5 mb-md-0">Great <span class="stand-out">offers</span></h4>
+                            <p class="text-white mt-sm-4 mt-lg-5 sub-description">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                                Perferendis libero blanditiis accusantium quo unde iure aspernatur 
+                                repellendus deserunt id nulla velit debitis aperiam reiciendis, eius 
+                                fugit magnam eos eum temporibus enim quaerat facere possimus 
+                                aliquam officiis iusto! Autem, sapiente perspiciatis!
+                            </p>
+                        </div>
+                        <div class="col px-0 px-md-2 col-md-6">
+                            <div id="landing-offers-carousel" class="owl-carousel owl-theme text-white">
+                                <div class="item d-flex flex-column align-items-center text-center">
+                                    <div class="offer-tag d-flex flex-column align-items-center justify-content-center">
+                                        <span class="">20%</span>
+                                        <span class="off text-uppercase">off</span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="image-wrapper landing-offer-product mx-auto">
+                                            <a href="single-product.html">
+                                                <img src="assets/high-resolution-pepperoni-pizza.jpg" alt="pepperoni flavoured pizza image" class="product-img circular offer mb-1">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="offer-description">
+                                        <h6 class="font-weight-bold my-2">cheesy pepperoni</h6>
+                                        <span class="font-weight-bold">$ 14.11</span>
+                                        <p class="">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, officia.
+                                        </p>
+                                        <button class="btn cart coloured-btn align-self-start flex-grow-0 flex-shrink-0"> 
+                                            <i class="fas fa-shopping-bag text-white mr-2" aria-hidden="true"></i> 
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="item d-flex flex-column align-items-center text-center">
+                                    <div class="offer-tag d-flex flex-column align-items-center justify-content-center">
+                                        <span class="">11%</span>
+                                        <span class="off text-uppercase">off</span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="image-wrapper landing-offer-product mx-auto">
+                                            <a href="single-product.html">
+                                                <img src="assets/margherita-pizza.jpg" alt="margherita flavoured pizza image" class="product-img circular mb-1">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="offer-description">
+                                        <h6 class="font-weight-bold my-2">sumptuous margherita</h6>
+                                        <span class="font-weight-bold">$12.50</span>
+                                        <p class="">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, officia.
+                                        </p>
+                                        <button class="btn cart coloured-btn align-self-start flex-grow-0 flex-shrink-0"> 
+                                            <i class="fas fa-shopping-bag text-white mr-2" aria-hidden="true"></i> 
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="item d-flex flex-column align-items-center text-center">
+                                    <div class="offer-tag d-flex flex-column align-items-center justify-content-center">
+                                        <span class="">31%</span>
+                                        <span class="off text-uppercase">off</span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="image-wrapper landing-offer-product mx-auto">
+                                            <a href="single-product.html">
+                                                <img src="assets/multiflavour-pizza.jpg" alt="" class="product-img circular mb-1">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="offer-description">
+                                        <h6 class="font-weight-bold my-2">multiflavour pizza</h6>
+                                        <span class="font-weight-bold">$17.50</span>
+                                        <p class="">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, officia.
+                                        </p>
+                                        <button class="btn cart coloured-btn align-self-start flex-grow-0 flex-shrink-0"> 
+                                            <i class="fas fa-shopping-bag text-white mr-2" aria-hidden="true"></i> 
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="item d-flex flex-column align-items-center text-center">
+                                    <div class="offer-tag d-flex flex-column align-items-center justify-content-center">
+                                        <span class="">14%</span>
+                                        <span class="off text-uppercase">off</span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="image-wrapper landing-offer-product mx-auto">
+                                            <a href="single-product.html">
+                                                <img src="assets/mozarella-pizza.jpg" alt="mozarella flavoured pizza image" class="product-img circular mb-1">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="offer-description">
+                                        <h6 class="font-weight-bold my-2">tasty mozarella</h6>
+                                        <span class="font-weight-bold">$13.50</span>
+                                        <p class="">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, officia.
+                                        </p>
+                                        <button class="btn cart coloured-btn align-self-start flex-grow-0 flex-shrink-0"> 
+                                            <i class="fas fa-shopping-bag text-white mr-2" aria-hidden="true"></i> 
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- end of offers landing section -->
+
+        <!-- Cuisine section -->
+        <section class="cuisine mb-0 mb-md-5">
+            <div class="container mb-0 mb-md-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 mb-3 text-center">
+                        <h4 class="title text-capitalize mb-3">Sample our <span class="stand-out">cuisines</span></h4>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-7 mb-3">
+                        <p class="text-center mb-1">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                            Aspernatur consectetur voluptatum accusamus incidunt 
+                            tempora repellendus quia sint voluptatibus soluta laboriosam?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column flex-sm-row">
+                    <div class="d-flex flex-column order-1 order-sm-0 align-items-center align-items-sm-start justify-content-center justify-content-lg-start">
+                        <h4 class="">Lourou</h4>
+                        <p class="mb-1 text-center text-sm-left">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Quas distinctio voluptatum minus numquam consectetur adipisicing 
+                            elitexpedita blanditiis iure.
+                        </p>
+                    </div>
+                    <img src="assets/french-pizza-cuisine.jpg" alt="french pizza cuisine image" id="img-1" class="align-self-center flex-shrink-0 align-self-sm-start mb-3 mb-sm-0">
+                </div>
+                <div class="col-lg-6 d-flex flex-column flex-sm-row">
+                    <img id="img-2" src="assets/italian-pizza-cuisine.jpg" class="mr-0 mr-sm-1 align-self-center flex-shrink-0 align-self-sm-start mb-3 mb-sm-0" alt="italian pizza cuisine image">
+                    <div class="d-flex flex-column align-items-center align-items-sm-end justify-content-center justify-content-lg-start">
+                        <h4 class="">Italian</h4>
+                        <p class="mb-1 text-center text-sm-right">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas distinctio 
+                            voluptatum minus numquam consectetur adipisicing elitexpedita blanditiis iure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-0 mt-lg-3">
+                <div class="col-lg-6 d-flex flex-column flex-sm-row mt-lg-2">
+                    <div class="d-flex order-1 order-sm-0 flex-column align-items-center align-items-sm-start justify-content-center justify-content-lg-end">
+                        <h4 class="">Mexican</h4>
+                        <p class="mb-0 text-center text-sm-left">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Quas distinctio voluptatum minus numquam consectetur adipisicing 
+                            elitexpedita blanditiis iure.
+                        </p>
+                    </div>
+                    <img src="assets/mozarella-pizza.jpg" class="align-self-center flex-shrink-0 align-self-sm-start mb-3 mb-sm-0" alt="mozarella flavoured pizza image" id="img-3">
+                </div>
+                <div class="col-lg-6 d-flex flex-column flex-sm-row mt-lg-2">
+                    <img id="img-4" src="assets/margherita-pizza.jpg" class="align-self-center flex-shrink-0 align-self-sm-start mb-3 mb-sm-0" alt="margherita flavoured pizza image">
+                    <div class="d-flex flex-column align-items-center align-items-sm-end  justify-content-center justify-content-lg-end">
+                        <h4 class="">Indian</h4>
+                        <p class="mb-0 text-center text-sm-right">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas distinctio 
+                            voluptatum minus numquam consectetur adipisicing elitexpedita blanditiis iure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of cuisine section -->
+
+        <!-- weekly offer section -->
+        <!-- terrific tuesday section -->
+        <div class="terrific-tuesday">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-6 mb-5">
+                        <div class="image-wrapper offer-img-wrapper">
+                            <img class="product-img circular" src="assets/margherita-pizza.jpg" alt="margherita flavoured pizza image">
+                        </div>
+                        <div class="offer-slash d-flex flex-column justify-content-center align-items-center">
+                            <span class="off">2<span>-medium</span></span>
+                            <span>pizzas</span>
+                            <span class="off weekly-price">$12.<span class="cents"> 00</span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex flex-column align-items-center align-items-md-end">
+                        <h4 class="title text-capitalize text-center text-md-right mb-3">terrific <span class="stand-out">tuesdays</span></h4>
+                        <p class="mb-4 text-center text-md-right">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Doloremque vitae dicta rem quasi aut reiciendis consequuntur 
+                            in eius incidunt. Ratione voluptate aut laudantium placeat 
+                            harum magni consequatur recusandae architecto totam ea delectus 
+                            alias beatae illum, cum, voluptas vero? Perferendis, tenetur?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of terrific tuesday section -->
+        
+        <!-- sumptuous thursday section -->
+        <div class="sumptuous-thursday">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md-6 order-md-2 mb-5 ">
+                        <div class="image-wrapper offer-img-wrapper ml-md-auto">
+                            <img  class="product-img circular" src="assets/pepperoni-pizza.jpg" alt="pepperoni flavoured pizza image">
+                        </div>
+                        <div class="offer-slash d-flex flex-column justify-content-center align-items-center">
+                            <span class="off">2<span>-jumbo</span></span>
+                            <span>pizzas</span>
+                            <span class="off weekly-price">$15.<span class="cents"> 00</span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex flex-column align-items-center align-items-md-start">
+                        <h4 class="title text-capitalize text-center text-md-left mb-3">sumptuous <span class="stand-out">thursdays</span></h4>
+                        <p class="mb-4 text-center text-md-left">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Doloremque vitae dicta rem quasi aut reiciendis consequuntur 
+                            in eius incidunt. Ratione voluptate aut laudantium placeat 
+                            harum magni consequatur recusandae architecto totam ea delectus 
+                            alias beatae illum, cum, voluptas vero? Perferendis, tenetur?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of sumptuous thursday section -->
+        <!-- end of weekly offers section  -->
+
+        <!-- menu section -->
+        <section class="menu">
+            <div class="container mb-3">
+                <div class="row justify justify-content-center">
+                    <div class="col-12 mb-3 text-center">
+                        <h4 class="title text-capitalize">Our <span class="stand-out">Menu</span></h4>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-7 mb-3">
+                        <p class="text-center mb-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur consectetur voluptatum accusamus incidunt 
+                            tempora repellendus quia sint voluptatibus soluta laboriosam?
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <nav class="nav justify-content-center font-weight-bold mb-5">
+                        <a href="#starters" class="mx-3 mx-sm-4 active" data-toggle="tab" role="button">starters</a>
+                        <a href="#deluxe" class="mx-3 mx-sm-4" data-toggle="tab">deluxe</a>
+                        <a href="#combos" class="mx-3 mx-sm-4" data-toggle="tab">combos</a>
+                    </nav>
+                </div>
+                <div class="tab-content menu-tab">
+                    <!-- starters tab content -->
+                    <div id="starters" class="tab-pane show fade active p-0">
+                        <div class="meals d-flex flex-wrap justify-content-center">
+                        </div>
+                    </div>
+                    <!-- end of starter tab content -->
+                    
+                    <!-- deluxe tab content -->
+                    <div id="deluxe" class="tab-pane fade p-0">
+                        <div class="meals d-flex flex-wrap justify-content-center">
+                        </div>
+                    </div>
+                    <!-- end of deluxe tab content -->
+
+                    <!-- combos tab content -->
+                    <div id="combos" class="tab-pane fade p-0">
+                        <div class="meals d-flex flex-wrap justify-content-center">
+                        </div>
+                    </div>
+                    <!-- end of combos tab content -->
+                </div>
+            </div>
+        </section>
+        <!-- end of menu section -->
+
+        <!-- Meal of the day section -->
+        <div class="meal">
+            <div class="container mb-3">
+                <div class="row justify justify-content-center">
+                    <div class="col-12 mb-3 text-center">
+                        <h4 class="title text-capitalize">pizza of the <span class="stand-out">Day</span></h4>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-11 col-md-8 col-lg-7 mb-3">
+                        <p class="text-center mb-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur consectetur voluptatum accusamus incidunt 
+                            tempora repellendus quia sint voluptatibus soluta laboriosam?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mb-5">
+                <img src="assets/high-resolution-pepperoni-pizza.jpg" alt="most delicious pizza today" class="img-fluid days-meal">
+            </div>
+            <div class="d-flex justify-content-center">
+                <h5 class="font-weight-bold meal-of-the-day mb-2 text-center">pepperoni with herbs</h5>
+            </div>  
+            <div class="d-flex flex-column flex-sm-row meal-description justify-content-center align-items-center">
+                <p class="para-1 text-center text-sm-right">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum 
+                    possimus ratione dicta, vel, repellendus odio repudiandae inventore fugit 
+                    officiis corrupti eos ut eaque temporibus earum voluptatem esse tempora ipsa.
+                </p>
+                <div class="d-flex justify-content-center align-items-center flex-shrink-0 mb-3 mb-sm-0"><span class="text-white">$4.<span class="cents text-white">00</span></span></i></div>
+                <p class="para-2 text-center text-sm-left">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum 
+                    possimus ratione dicta, vel, repellendus odio repudiandae inventore fugit 
+                    officiis corrupti eos ut eaque temporibus earum voluptatem esse tempora ipsa.
+                </p>
+            </div>  
+        </div>
+        <!-- end of meal of the day section -->
+
+        <!-- Reserve Table Section -->
+        <section id="reservation" class="reservation">
+            <div class="container mb-3">
+                <div class="row justify justify-content-center">
+                    <div class="col-12 mb-3 mt-5 text-center">
+                        <h4 class="title text-capitalize">Make <span class="stand-out">Reservation</span></h4>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-7 mb-1">
+                        <p class="text-center mb-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur consectetur voluptatum accusamus incidunt 
+                            tempora repellendus quia sint voluptatibus soluta laboriosam?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="reserve d-flex justify-content-center">
+                <form class="px-auto mx-auto">
+                    <div class="form-row justify-content-center py-md-3">
+                        <div class="form-group col-md-6 pr-md-4 ">
+                            <label for="fullname">Name:</label>
+                            <input type="text" class="form-control"  id="fullname">
+                        </div>
+                        <div class="form-group col-md-6 pl-md-4">
+                            <label for="guests">Guests:</label>
+                            <input type="text" class="form-control"  id="guests">
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center py-md-3">
+                        <div class="form-group col-md-6 pr-md-4">
+                            <label for="fullname">Phone Number:</label>
+                            <input type="text" class="form-control"  id="fullname">
+                        </div>
+                        <div class="form-group col-md-6 pl-md-4">
+                            <label for="guests">Date</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center py-md-3">
+                        <div class="form-group col-md-6 pr-md-4">
+                            <label for="fullname">Email address:</label>
+                            <input type="text" class="form-control"  id="fullname">
+                        </div>
+                        <div class="form-group col-md-6 pl-md-4">
+                            <label for="time">Time:</label>
+                            <input type="time" class="form-control"  id="time">
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center mt-5">
+                        <button type="submit" class="btn coloured-btn reserve-btn font-weight-bold">Reserve Table</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- End of Reserve Table Section -->
+
+        <!-- App section -->
+        <section class="app">
+            <div class="container">
+                <div class="row justify justify-content-center mb-4">
+                    <div class="col-12 mb-3 text-center">
+                        <h4 class="title text-capitalize">Download the <span class="stand-out">App</span></h4>
+                    </div>
+                </div>
+            </div>
+            <div id="app-body" class="row justify-content-center align-items-center">
+                <div class="col col-lg-10 d-flex flex-column align-items-center">
+                    <p class="mb-4 text-center mt-1 mt-sm-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, aperiam 
+                        officiis! Iure, consequuntur? Blanditiis ex, dolores repellendus temporibus 
+                        maxime reiciendis itaque, magni aspernatur provident mollitia ipsa sed, 
+                        minus sapiente expedita voluptatum consectetur qui cupiditate iusto eius 
+                        necessitatibus quisquam eum reprehenderit iste error. voluptatum consectetur  
+                        nobis odit possimus voluptatem non eveniet recusandae libero?
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center align-items-end mt-2 mb-2">
+                        <a id="app-btn" class="mr-md-4 mb-2" href=""> 
+                            <img class="img-fluid" src="assets/googleplay.png" alt=""> 
+                        </a>
+                        <a id="app-btn" class="mb-2" href=""> 
+                            <img class="img-fluid" src="assets/appstore.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of app section -->
+
+        <!-- Events & blog section-->
+        <section id="blog-2" class="offers">
+            <div class="container">
+                <div class="row justify justify-content-center">
+                    <div class="col-12 mb-3 text-center">
+                        <h4 class="title text-capitalize">stay <span class="stand-out">Updated</span></h4>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-11 col-md-8 col-lg-7 mb-5">
+                        <p class="text-center mb-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur consectetur voluptatum accusamus incidunt 
+                            tempora repellendus quia sint voluptatibus soluta laboriosam?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="offers-carousel" class="owl-carousel owl-theme">
+                <div class="item d-flex flex-column align-items-center text-center">
+                    <div class="date-tag d-flex flex-column align-items-center justify-content-center">
+                        <span class="">20th</span>
+                        <span id="month" class="month text-uppercase">NOV</span>
+                    </div>
+                    <div class="col">
+                        <div class="image-wrapper offer-product mx-auto">
+                            <img src="assets/pizza-unsplash.jpg" alt="" class="product-img circular mb-2">
+                        </div>
+                    </div>
+                    <div class="offer-description">
+                        <span class="font-weight-bold heading my-2">Pizza fest</span>
+                        <p class="mb-1">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Quas distinctio voluptatum minus numquam consectetur adipisicing 
+                            elitexpedita blanditiis iure.
+                        </p>
+                        <a href="blogpost.html">read more</a>
+                    </div>
+                </div>
+                <div class="item d-flex flex-column align-items-center text-center">
+                    <div class="date-tag d-flex flex-column align-items-center justify-content-center">
+                        <span class="">11th</span>
+                        <span id="month" class="month text-uppercase">dec</span>
+                    </div>
+                    <div class="col">
+                        <div class="image-wrapper offer-product mx-auto">
+                            <img src="assets/pex-maria.jpg" alt="" class="product-img circular mb-2">
+                        </div>
+                    </div>
+                    <div class="offer-description">
+                        <span class="font-weight-bold heading my-2">Marinating beef</span>
+                        <p class="mb-1">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas distinctio 
+                            voluptatum minus numquam consectetur adipisicing elitexpedita blanditiis iure.
+                        </p>
+                        <a href="blogpost.html">read more</a>
+                    </div>
+                </div>
+                <div class="item d-flex flex-column align-items-center text-center">
+                    <div class="date-tag d-flex flex-column align-items-center justify-content-center">
+                        <span class="">9th</span>
+                        <span id="month" class="month text-uppercase">sep</span>
+                    </div>
+                    <div class="col">
+                        <div class="image-wrapper offer-product mx-auto">
+                            <img src="assets/fest-unsplash.jpg" alt="" class="product-img circular mb-2">
+                        </div>
+                    </div>
+                    <div class="offer-description">
+                        <span class="font-weight-bold heading my-2">Food & wine experience</span>
+                        <p class="mb-1">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Quas distinctio voluptatum minus numquam consectetur adipisicing 
+                            elitexpedita blanditiis iure.
+                        </p>
+                        <a href="blogpost.html">read more</a>
+                    </div>
+                </div>
+                <div class="item d-flex flex-column align-items-center text-center">
+                    <div class="date-tag d-flex flex-column align-items-center justify-content-center">
+                        <span class="">2nd</span>
+                        <span id="month" class="month text-uppercase">oct</span>
+                    </div>
+                    <div class="col">
+                        <div class="image-wrapper offer-product mx-auto">
+                            <img src="assets/marinate.jpg" alt="" class="product-img circular mb-2">
+                        </div>
+                    </div>
+                    <div class="offer-description">
+                        <span class="font-weight-bold heading my-2">Oktoberfest</span>
+                        <p class="mb-1">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas distinctio 
+                            voluptatum minus numquam consectetur adipisicing elitexpedita blanditiis iure.
+                        </p>
+                        <a href="blogpost.html">read more</a>
+                    </div>
+                </div>
+            </div>   
+        </section>
+        <!-- end of Events & Blog section -->
+
+        <!-- Testimonials section -->
+
+        <section class="testimonials">
+            <div class="container mb-5">
+                <div class="row justify justify-content-center">
+                    <div class="col-12 mb-3  mt-2 text-center">
+                        <h4 class="title text-capitalize"><span class="stand-out">Happy</span> clients</h4>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-11 col-md-8 col-lg-7 mb-5">
+                        <p class="text-center mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur consectetur voluptatum accusamus incidunt 
+                            tempora repellendus quia sint voluptatibus soluta laboriosam?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lower-split">
+                <div id="clients-carousel" class="owl-carousel owl-theme text-white">
+                    <div class="item d-flex flex-column align-items-center text-center">
+                        <img class="rounded-circle mb-3 img-fluid" src="assets/girl-client.jpg" alt="Client image">
+                        <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
+                        <blockquote class="">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quasi, fugit vero laborum in eius nisi magni?
+                            <footer class="blockquote-footer text-white my-2"><span class="font-weight-bold text-white">Zahara Lala</span>, Financier</footer>
+                        </blockquote>
+                    </div>
+                    <div class="item d-flex flex-column align-items-center text-center">
+                        <img class="rounded-circle mb-3 img-fluid text-center" src="assets/client-2.jpg" alt="Client image">
+                        <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
+                        <blockquote class="">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quasi, fugit vero laborum in eius nisi magni?
+                            <footer class="blockquote-footer text-white my-2"><span class="font-weight-bold text-white">Dudde kensing</span>, Photographer</footer>
+                        </blockquote>
+                    </div>
+                    <div class="item d-flex flex-column align-items-center text-center">
+                        <img class="rounded-circle mb-3 img-fluid" src="assets/happy-lady.jpg" alt="Client image">
+                        <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
+                        <blockquote class="">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quasi, fugit vero laborum in eius nisi magni?
+                            <footer class="blockquote-footer text-white my-2"><span class="font-weight-bold text-white">Jane doe</span>, clerk</footer>
+                        </blockquote>
+                    </div>
+                    <div class="item d-flex flex-column align-items-center text-center">
+                        <img class="rounded-circle mb-3 img-fluid" src="assets/pexels-olive.jpg" alt="Client image">
+                        <i class="fa fa-quote-left fa-4x" aria-hidden="true"></i>
+                        <blockquote class="">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quasi, fugit vero laborum in eius nisi magni?
+                            <footer class="blockquote-footer text-white my-2"><span class="font-weight-bold text-white">Liam litte</span>, Web designer</footer>
+                        </blockquote>
+                    </div>
+                </div>    
+            </div>
+        </section>
+        <!-- Testimonials section end -->
+
+        <!-- Locations and branches section -->
+        <section class="location">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 d-flex flex-column align-items-center align-items-md-start">
+                        <h4 class="title text-capitalize text-center text-md-left mb-3">Locate our  <span class="stand-out">outlets</span></h4>
+                        <p class="mb-4 text-center text-md-left">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Nesciunt, laborum praesentium. Nesciunt eaque hic cum cupiditate molestias, 
+                            quam consectetur officia possimus quia expedita at ratione optio similique! Dolorum molestias, 
+                            blanditiis ab similique asperiores aliquam rem!
+                        </p>
+                        <div class="branches d-flex justify-content-center justify-content-md-start my-3 flex-wrap">
+                            <div class="active">
+                                <img id="logo-1" class="mb-3 active" src="assets/kensingtone.png">
+                            </div>
+                            <div>
+                                <img id="logo-2" class="mb-3" src="assets/downtown.png">
+                            </div>
+                            <div>
+                                <img id="logo-3" class="mb-3" src="assets/waterfront.png">
+                            </div>
+                            <div>
+                                <img id="logo-4" class="mb-3" src="assets/yorkshire.png">
+                            </div> 
+                            <div>
+                                <img id="logo-5" class="mb-3" src="assets/melbourne.png">
+                            </div>
+                            <div>
+                                <img id="logo-6" class="mb-3" src="assets/vegas.png">
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center justify-content-md-start">
+                        <div class="capsule d-flex flex-column justify-content-center align-items-center ml-md-5">
+                            <img class="img-fluid restaurant-img flex-fill"  src="assets/pizza-restaurant.jpg" alt="pizza restaurant chain outlet image">
+                            <div id="iframe-wrapper">
+                                <iframe class="restaurant-gps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.914039724503!2d36.88701894972713!3d-1.2198905991058548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3fc955678a67%3A0x2c30e07746ac972a!2sTRM%20-%20Thika%20Road%20Mall!5e0!3m2!1sen!2ske!4v1600327082693!5m2!1sen!2ske" style="border:0;" frameborder="0" aria-hidden="false" tabindex="0"></iframe>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of Locations and branches section -->
+
+        <!-- operating hours section -->
+        <section class="operation">
+            <div class="container mb-3">
+                <div class="row justify-content-center">
+                    <div class="col-12 mb-3 text-center">
+                        <h4 class="title text-capitalize">Operating <span class="stand-out">Hours</span></h4>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-11 col-md-8 col-lg-7 mb-3">
+                        <p class="text-center mb-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur consectetur voluptatum accusamus incidunt 
+                            tempora repellendus quia sint voluptatibus soluta laboriosam?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="operation-time" class="row">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <div class="clock"></div>
+                    <span class="font-weight-bold mb-4 heading">Weekdays</span>
+                    <span class="text-muted">monday - fridays</span>
+                    <span class="mb-3 text-muted">6:00AM - 8:00PM</span>
+                </div>
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <div class="clock"></div>
+                    <span class="font-weight-bold mb-4 heading">Weekends</span>
+                    <span class="text-muted">saturdays</span>
+                    <span class="mb-3 text-muted">6:00AM - 09:00PM</span>
+                    <span class="text-muted mb-3">closed on sundays</span>
+                </div>
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <div class="clock"></div>
+                    <span class="font-weight-bold mb-4 heading">Holidays</span>
+                    <span class="text-muted">week-days/end holidays</span>
+                    <span class="mb-3 text-muted">6:00AM - 11:00PM</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- end of operating hours section -->
+
+        <!-- Footer section -->
+        <footer class="footer-section">
+            <div class="row align-items-center">
+                <div class="col-md-4 col-sm-6 d-flex mt-3 mb-3 mb-md-0 justify-content-center justify-content-sm-start">
+                    <i class="fas fa-phone text-white mt-1"></i>
+                    <span class="text-white ml-2">+254 999 888 000</span>
+                    <span class="text-white font-weight-bold ml-2">Order Now</span>
+                </div>
+                <div class="col-md-4 col-sm-6 d-flex social-icons justify-content-center justify-content-sm-end ">
+                    <div class="socials d-flex align-items-center justify-content-center mr-4 ml-sm-auto">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div class="socials d-flex align-items-center justify-content-center mr-4">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    <div class="socials d-flex align-items-center justify-content-center mr-4">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="socials d-flex align-items-center justify-content-center mr-md-4 mr-md-auto">
+                        <a class="mt-1" href="#">
+                            <i class="fab fa-snapchat"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
+                    <span class="copyright">© Copyright Brian Mwaniki 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer section -->
+      
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
