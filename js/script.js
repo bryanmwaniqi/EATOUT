@@ -496,7 +496,7 @@ $(function () {
                 isLoggedIn = localStorage.getItem('loggedin');
                 $('a.logged-out').addClass('d-none');
                 $('button.logged-in').removeClass('d-none');
-                location.replace('offers-landing.html');
+                location.replace('index.html');
                 console.log(data);
             } 
         }).catch(error => {
