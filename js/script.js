@@ -11,6 +11,7 @@ $(function () {
     var token;
     var cart = [];
     updateTally()
+    var verifyUrl = "https://pizza-eatout.herokuapp.com/api/v1/verify"
     
 
     if (isLoggedIn) {
