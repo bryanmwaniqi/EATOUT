@@ -346,7 +346,7 @@ $(function () {
 
     // fetching meal products resources
     mealsList = $('.meals');
-    let url = "http://127.0.0.1:5000/api/v1/meals";
+    let url = "https://pizza-eatout.herokuapp.com/api/v1/meals";
     output = "";
     let mealCatalog = products => {
         products.forEach(product => {
@@ -467,7 +467,7 @@ $(function () {
     });
 
     // Login/fetch authorization token
-    const loginUrl = "http://127.0.0.1:5000/api/v1/login";
+    const loginUrl = "https://pizza-eatout.herokuapp.com/api/v1/login";
     $('#Login').submit(function (e) {
         e.preventDefault();
         let formData = new FormData(e.target);
@@ -496,7 +496,7 @@ $(function () {
                 isLoggedIn = localStorage.getItem('loggedin');
                 $('a.logged-out').addClass('d-none');
                 $('button.logged-in').removeClass('d-none');
-                location.replace('offers-landing.html');
+                location.replace('index.html');
                 console.log(data);
             } 
         }).catch(error => {
@@ -510,7 +510,7 @@ $(function () {
     });
 
     // Account creation using fetch
-    const signupUrl = "http://127.0.0.1:5000/api/v1/register"
+    const signupUrl = "https://pizza-eatout.herokuapp.com/api/v1/register"
     $('#signup').submit(function (e) {
         e.preventDefault();
         let formData = new FormData(e.target);
@@ -578,7 +578,7 @@ $(function () {
     //fetch reservations for logged in user
     $('.get-reservations').on('click', function () {
         token = getCookie("csrf_access_token");
-        let reservationsUrl = "http://127.0.0.1:5000/api/v1/reservations"
+        let reservationsUrl = "https://pizza-eatout.herokuapp.com/api/v1/reservations"
         fetch(reservationsUrl,{
             mode: "cors",
             credentials: "include",
@@ -638,7 +638,7 @@ $(function () {
 
 
     // logout functionality
-    const logoutUrl = "http://127.0.0.1:5000/api/v1/logout"
+    const logoutUrl = "https://pizza-eatout.herokuapp.com/api/v1/logout"
     $('button#logout').on('click', function (e) {
         token = getCookie("csrf_access_token");
         fetch(logoutUrl,{
