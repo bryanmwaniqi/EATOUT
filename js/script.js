@@ -7,6 +7,7 @@ $(function () {
     // });
 
     // localStorage.removeItem("shoppingcart")
+    verify()
     var isLoggedIn = localStorage.getItem('loggedin');
     var token;
     var cart = [];
@@ -439,6 +440,7 @@ $(function () {
                 }
             });
         }); 
+        // Add to cart button functionality
         $("button.cart").on('click', function (e) {
             let item = {
                 name: $(this).siblings('h6').text(),
