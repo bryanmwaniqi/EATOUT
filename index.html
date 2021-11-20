@@ -447,38 +447,44 @@
                 </div>
             </div>
             <div class="reserve d-flex justify-content-center">
-                <form class="px-auto mx-auto">
-                    <div class="form-row justify-content-center py-md-3">
-                        <div class="form-group col-md-6 pr-md-4 ">
-                            <label for="fullname">Name:</label>
-                            <input type="text" class="form-control"  id="fullname">
-                        </div>
-                        <div class="form-group col-md-6 pl-md-4">
+                <form id="reservations-form" class="px-auto mx-auto">
+                    <div id="tableno-row" class="form-row justify-content-center py-md-3">
+                        <div class="form-group col-md-6 pr-md-4">
                             <label for="guests">Guests:</label>
-                            <input type="text" class="form-control"  id="guests">
+                            <input type="number" class="form-control" required id="guests" name="persons" placeholder="No of guests" required>
+                        </div>
+                        <div class="form-group col-md-6 pl-md-4 ">
+                            <label for="table-no">Table No:</label>
+                            <select id="table-no" class="form-control" required name="table_no">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-row justify-content-center py-md-3">
                         <div class="form-group col-md-6 pr-md-4">
                             <label for="fullname">Phone Number:</label>
-                            <input type="text" class="form-control"  id="fullname">
+                            <input type="text" class="form-control" required id="phone-no" name="phone" placeholder="070 5563 7825" required>
                         </div>
                         <div class="form-group col-md-6 pl-md-4">
                             <label for="guests">Date</label>
-                            <input type="date" class="form-control" id="date">
+                            <input type="date" class="form-control reservation-date" name="reservation_date" id="date" required>
                         </div>
                     </div>
-                    <div class="form-row justify-content-center py-md-3">
-                        <div class="form-group col-md-6 pr-md-4">
-                            <label for="fullname">Email address:</label>
-                            <input type="text" class="form-control"  id="fullname">
-                        </div>
-                        <div class="form-group col-md-6 pl-md-4">
-                            <label for="time">Time:</label>
-                            <input type="time" class="form-control"  id="time">
-                        </div>
-                    </div>
-                    <div class="form-row justify-content-center mt-5">
+                    <div id="reserve-submit" class="form-row justify-content-center mt-5">
                         <button type="submit" class="btn coloured-btn reserve-btn font-weight-bold">Reserve Table</button>
                     </div>
                 </form>

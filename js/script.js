@@ -12,7 +12,7 @@ $(function () {
     var token;
     var cart = [];
     updateTally()
-    var verifyUrl = "https://pizza-eatout.herokuapp.com/api/v1/verify"
+    var verifyUrl = "http://127.0.0.1:5000/api/v1/verify"
     
 
     if (isLoggedIn) {
@@ -348,7 +348,7 @@ $(function () {
 
     // fetching meal products resources
     mealsList = $('.meals');
-    let url = "https://pizza-eatout.herokuapp.com/api/v1/meals";
+    let url = "http://127.0.0.1:5000/api/v1/meals";
     output = "";
     let mealCatalog = products => {
         products.forEach(product => {
@@ -470,7 +470,7 @@ $(function () {
     });
 
     // Login/fetch authorization token
-    const loginUrl = "https://pizza-eatout.herokuapp.com/api/v1/login";
+    const loginUrl = "http://127.0.0.1:5000/api/v1/login";
     $('#Login').submit(function (e) {
         e.preventDefault();
         let formData = new FormData(e.target);
@@ -513,7 +513,7 @@ $(function () {
     });
 
     // Account creation using fetch
-    const signupUrl = "https://pizza-eatout.herokuapp.com/api/v1/register"
+    const signupUrl = "http://127.0.0.1:5000/api/v1/register"
     $('#signup').submit(function (e) {
         e.preventDefault();
         let formData = new FormData(e.target);
@@ -581,7 +581,7 @@ $(function () {
     //fetch reservations for logged in user
     $('.get-reservations').on('click', function () {
         token = getCookie("csrf_access_token");
-        let reservationsUrl = "https://pizza-eatout.herokuapp.com/api/v1/reservations"
+        let reservationsUrl = "http://127.0.0.1:5000/api/v1/reservations"
         fetch(reservationsUrl,{
             mode: "cors",
             credentials: "include",
@@ -639,9 +639,60 @@ $(function () {
         }
     })
 
+    // Reserve date future date only functionality
+    var now = new Date(),
+    // minimum date the user can choose, in this case now and in the future
+    minDate = now.toISOString().substring(0,10);
+
+    $('.reservation-date').prop('min', minDate);
+
+    // Making Reservations with fetch
+    const reserveUrl = "http://127.0.0.1:5000/api/v1/reservations"
+    $('#reservations-form').submit(function (e) {
+        e.preventDefault();
+        let formData = new FormData(e.target);
+        let reservationsPayload = {};
+        formData.forEach((value, key) => (reservationsPayload[key] = value));
+        reservationsPayload.table_no = parseInt(reservationsPayload.table_no)
+        reservationsPayload.persons = parseInt(reservationsPayload.persons)
+        let reservations = []
+        reservations.push(reservationsPayload)
+        fetch(reserveUrl, {
+            mode: "cors",
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "x-csrf-token": token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(reservations)
+        }).then(response => {
+            return response.json()
+        }).then(data => {
+            console.log(data)
+            $('#reservations-form div.err').remove();
+            if (Array.isArray(data) == true) {
+                let reservation = `<div class="reservation form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-success" role="alert">Table reserved successfully for date ${data[0].reservation_date}</div></div></div>`;
+                $(reservation).insertBefore('#tableno-row');
+            } else {
+                if ("0" in data) {
+                    if (data["0"]._schema[0] == "You can only reserve from Table 1 - 20") {
+                        let failedReservation = `<div class="err form-row justify-content-center"><div class="form-group col-md-6"><div class="alert alert-danger" role="alert">${data["0"]._schema[0]}</div></div></div>`;
+                        $(failedReservation).insertAfter('#tableno-row');
+                    } else if (data["0"]._schema[0] == "Table accomodates atleast 1 person and at most 6") {
+                        let failedReservation = `<div class="err form-row justify-content-center"><div class="form-group col-md-9"><div class="alert alert-danger" role="alert">${data["0"]._schema[0]}</div></div></div>`;
+                        $(failedReservation).insertAfter('#tableno-row');
+                    } else {
+                        let failedReservation = `<div class="err form-row justify-content-center"><div class="form-group col-md-9"><div class="alert alert-danger" role="alert">${data["0"]._schema[0]}</div></div></div>`;
+                        $(failedReservation).insertBefore('#reserve-submit');
+                    }
+                }
+            }
+        })
+    });
 
     // logout functionality
-    const logoutUrl = "https://pizza-eatout.herokuapp.com/api/v1/logout"
+    const logoutUrl = "http://127.0.0.1:5000/api/v1/logout"
     $('button#logout').on('click', function (e) {
         token = getCookie("csrf_access_token");
         fetch(logoutUrl,{
