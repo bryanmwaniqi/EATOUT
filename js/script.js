@@ -773,11 +773,13 @@ $(function () {
     // single product page template populating function
     function updateSingleProduct() {
         let loadedItem = JSON.parse(localStorage.getItem("loadedproduct"));
-        $('#infocus-product').attr('src', loadedItem.image_url);
-        $('.food-price').html(loadedItem.price);
-        $('.food-description').html(loadedItem.description);
-        $('.food-name').html(loadedItem.name);
-        $('.food-quantity').html(loadedItem.quantity)
+        if (loadedItem) {
+            $('#infocus-product').attr('src', loadedItem.image_url);
+            $('.food-price').html(loadedItem.price);
+            $('.food-description').html(loadedItem.description);
+            $('.food-name').html(loadedItem.name);
+            $('.food-quantity').html(loadedItem.quantity);
+        }
     }
 
     // increment product tally in single page product
