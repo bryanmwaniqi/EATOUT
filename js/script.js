@@ -471,11 +471,20 @@ $(function () {
 
             // onclick event handler for food items
             $('a.single-product').on('click', function (e) {
+                let foodName = $(this).parent().parent().siblings('.meal-text').children('h6').text();
+                let foodItems = JSON.parse(localStorage.getItem('shoppingcart'));
+                let foodQuantity = 0;
+                foodItems.map(dataItem => {
+                    if (foodName === dataItem.name) {
+                        foodQuantity = dataItem.product_tally;
+                    } 
+                })
                 let foodItem = {
                     name: $(this).parent().parent().siblings('.meal-text').children('h6').text(),
                     image_url: $(this).children('img').attr('src'),
                     description: $(this).parent().parent().siblings('.meal-text').children('p').text(),
                     price: $(this).parent().parent().siblings('.meal-text').children('span').children('span').text(),
+                    quantity: foodQuantity
                 }
                 localStorage.setItem("loadedproduct", JSON.stringify(foodItem));
                 location.replace('single-product.html');    
@@ -739,12 +748,69 @@ $(function () {
         }
     }
 
-    // single product page template populating functio
+    // single product page template populating function
     function updateSingleProduct() {
         let loadedItem = JSON.parse(localStorage.getItem("loadedproduct"));
         $('#infocus-product').attr('src', loadedItem.image_url);
         $('.food-price').html(loadedItem.price);
         $('.food-description').html(loadedItem.description);
         $('.food-name').html(loadedItem.name);
+        $('.food-quantity').html(loadedItem.quantity)
     }
+
+    // increment product tally in single page product
+    $('span#increment').on('click', function (e) {
+        let loadedItem = JSON.parse(localStorage.getItem('loadedproduct'));
+        let targetName = loadedItem.name;
+        let shoppinglist = JSON.parse(localStorage.getItem('shoppingcart'));
+        if ($('.food-quantity').text() == 0) {
+            let foodItem = {
+                name: loadedItem.name,
+                product_tally: 1,
+                image_url: loadedItem.image_url,
+                price: loadedItem.price
+            }
+            shoppinglist.push(foodItem);
+            loadedItem.quantity += 1
+            $('.food-quantity').html(foodItem.product_tally)
+            
+        } else {
+            shoppinglist.forEach(function (product) {
+                if (targetName === product.name) {
+                    product.product_tally += 1;
+                    loadedItem.quantity = product.product_tally
+                    $('.food-quantity').html(product.product_tally)
+                }
+            })
+        }
+        
+        localStorage.setItem('shoppingcart', JSON.stringify(shoppinglist));
+        localStorage.setItem('loadedproduct', JSON.stringify(loadedItem));
+        updateTally()
+        // location.reload()
+    })
+
+    // decrement product tally in single page product
+    $('span#decrement').on('click', function (e) {
+        let loadedItem = JSON.parse(localStorage.getItem('loadedproduct'));
+        let targetName = loadedItem.name;
+        let shoppinglist = JSON.parse(localStorage.getItem('shoppingcart'));
+        shoppinglist.forEach(function (product) {
+            if (targetName === product.name) {
+                if (product.product_tally > 1) {
+                    product.product_tally -= 1;
+                    loadedItem.quantity = product.product_tally
+                    $('.food-quantity').html(product.product_tally)
+                } else {
+                    shoppinglist.splice(shoppinglist.indexOf(product), 1)
+                    loadedItem.quantity = 0
+                    $('.food-quantity').html(0)
+                }
+            }
+        })
+        localStorage.setItem('shoppingcart', JSON.stringify(shoppinglist));
+        localStorage.setItem('loadedproduct', JSON.stringify(loadedItem));
+        updateTally()
+        // location.reload()
+    })
 });
