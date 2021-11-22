@@ -13,6 +13,7 @@ $(function () {
     var cart = [];
     updateTally()
     var verifyUrl = "https://pizza-eatout.herokuapp.com/api/v1/verify"
+    updateSingleProduct()
 
 
     if (isLoggedIn) {
@@ -357,7 +358,7 @@ $(function () {
                 <div class="d-flex flex-column align-items-center text-center p-0 mb-5">
                     <div class="col text-left">
                         <div class="image-wrapper menu-img mx-auto">
-                            <a href="single-product.html" class="">
+                            <a href="#" class="single-product">
                                 <img src="${product.image_url}" alt="${product.name} flavoured pizza image" class="product-img circular mb-1">
                             </a>
                         </div>
@@ -467,6 +468,18 @@ $(function () {
                 }
                 updateTally()
             });
+
+            // onclick event handler for food items
+            $('a.single-product').on('click', function (e) {
+                let foodItem = {
+                    name: $(this).parent().parent().siblings('.meal-text').children('h6').text(),
+                    image_url: $(this).children('img').attr('src'),
+                    description: $(this).parent().parent().siblings('.meal-text').children('p').text(),
+                    price: $(this).parent().parent().siblings('.meal-text').children('span').children('span').text(),
+                }
+                localStorage.setItem("loadedproduct", JSON.stringify(foodItem));
+                location.replace('single-product.html');    
+            })
         });
 
     // Login/fetch authorization token
@@ -724,5 +737,14 @@ $(function () {
             })
             cartTally.html(tally)
         }
+    }
+
+    // single product page template populating functio
+    function updateSingleProduct() {
+        let loadedItem = JSON.parse(localStorage.getItem("loadedproduct"));
+        $('#infocus-product').attr('src', loadedItem.image_url);
+        $('.food-price').html(loadedItem.price);
+        $('.food-description').html(loadedItem.description);
+        $('.food-name').html(loadedItem.name);
     }
 });
