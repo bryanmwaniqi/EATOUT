@@ -759,7 +759,7 @@ $(function () {
     }
 
     // increment product tally in single page product
-    $('span#increment').on('click', function (e) {
+    $('.increment').on('click', function (e) {
         let loadedItem = JSON.parse(localStorage.getItem('loadedproduct'));
         let targetName = loadedItem.name;
         let shoppinglist = JSON.parse(localStorage.getItem('shoppingcart'));
@@ -786,8 +786,7 @@ $(function () {
         
         localStorage.setItem('shoppingcart', JSON.stringify(shoppinglist));
         localStorage.setItem('loadedproduct', JSON.stringify(loadedItem));
-        updateTally()
-        // location.reload()
+        updateTally();
     })
 
     // decrement product tally in single page product
