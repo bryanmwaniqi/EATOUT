@@ -275,7 +275,7 @@ $(function () {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                 Maiores facilis  
                             </p>
-                            <span class="tangerine">$${product.price}</span>
+                            <span class="tangerine">$ <span>${product.price}</span></span>
                         </div>  
                     </td>
                     <td class="align-middle">
@@ -286,7 +286,7 @@ $(function () {
                         </div>
                     </td>
                     <td  id="item-subtotal" class="font-weight-bold tangerine align-middle">
-                        $${product.price * product.product_tally} 
+                        $ <span class="font-weight-bold tangerine">${product.price * product.product_tally}</span> 
                     </td>
                     <td  class="bin align-middle">
                         <i class="fas fa-trash-alt fa-lg text-muted delete"></i>
@@ -304,18 +304,24 @@ $(function () {
             `
         }
         shoppingCartList.append(cartOutput);
-        $('span.overall-total').append(orderTotal)
+        $('span.overall-total').html(orderTotal)
     }
     cartCatalog(JSON.parse(localStorage.getItem("shoppingcart")));
 
     // deleting item from cart
     $('.delete').on('click', function (e) {
         let targetName = $(this).parent().siblings('td.cart-product').children('div').children('h5').text();
-        // console.log(targetName)
         let shoppinglist = JSON.parse(localStorage.getItem('shoppingcart'));
         let result = shoppinglist.filter(product => product.name !== targetName);
         localStorage.setItem('shoppingcart', JSON.stringify(result));
-        location.reload();
+        updateTally();
+        let sub = $(this).parent().siblings('td#item-subtotal').children().text();
+        let subint = parseFloat(sub);
+        console.log()
+        let ov = parseFloat($('span.overall-total:eq(-1)').text()) - subint;
+        $('span.overall-total').html(ov)
+        $(this).parent().parent().remove();
+        
     })
     // incrementing product tally
     $('span#addition').on('click', function (e) {
@@ -327,12 +333,17 @@ $(function () {
             }
         })
         localStorage.setItem('shoppingcart', JSON.stringify(shoppinglist))
-        location.reload()
+        updateTally();
+        let price = $(this).parent().parent().siblings('td.cart-product').children('div').children('span').children('span').text();
+        let subtotal = $(this).parent().parent().siblings('td#item-subtotal').children('span').text();
+        $(this).parent().parent().siblings('td#item-subtotal').children('span').html(parseFloat(subtotal) + parseFloat(price));
+        let newTotal = parseFloat(price) + parseFloat($('span.overall-total:eq(-1)').text());
+        $('span.overall-total').html(newTotal);
     })
 
     // decrementing product tally 
     $('span#subtraction').on('click', function (e) {
-        let targetName = $(this).parent().parent().siblings('td.cart-product').children('div').children('h5').text()
+        let targetName = $(this).parent().parent().siblings('td.cart-product').children('div').children('h5').text();
         let shoppinglist = JSON.parse(localStorage.getItem('shoppingcart'));
         shoppinglist.forEach(function (product) {
             if (targetName === product.name) {
@@ -343,8 +354,13 @@ $(function () {
                 }
             }
         })
-        localStorage.setItem('shoppingcart', JSON.stringify(shoppinglist))
-        location.reload()
+        localStorage.setItem('shoppingcart', JSON.stringify(shoppinglist));
+        updateTally();
+        let price = $(this).parent().parent().siblings('td.cart-product').children('div').children('span').children('span').text();
+        let subtotal = $(this).parent().parent().siblings('td#item-subtotal').children('span').text();
+        $(this).parent().parent().siblings('td#item-subtotal').children('span').html(parseFloat(subtotal) - parseFloat(price));
+        let newTotal = parseFloat($('span.overall-total:eq(-1)').text()) - parseFloat(price);
+        $('span.overall-total').html(newTotal);
     })
 
     // fetching meal products resources
@@ -740,7 +756,7 @@ $(function () {
     function updateTally() {
         if (localStorage.getItem("shoppingcart") !== null) {
             cartTally = $('.cart-item');
-            let tally = 0
+            let tally = 0;
             JSON.parse(localStorage.getItem("shoppingcart")).map(data => {
                 tally = tally + data.product_tally
             })
