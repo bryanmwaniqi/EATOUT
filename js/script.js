@@ -358,9 +358,15 @@ $(function () {
         updateTally();
         let price = $(this).parent().parent().siblings('td.cart-product').children('div').children('span').children('span').text();
         let subtotal = $(this).parent().parent().siblings('td#item-subtotal').children('span').text();
-        $(this).parent().parent().siblings('td#item-subtotal').children('span').html(parseFloat(subtotal) - parseFloat(price));
-        let newTotal = parseFloat($('span.overall-total:eq(-1)').text()) - parseFloat(price);
-        $('span.overall-total').html(newTotal);
+        if (parseFloat(price) === parseFloat(subtotal)) {
+            let newTotal = parseFloat($('span.overall-total:eq(-1)').text()) - parseFloat(price);
+            $('span.overall-total').html(newTotal);
+            $(this).parent().parent().parent().remove();
+        } else {
+            $(this).parent().parent().siblings('td#item-subtotal').children('span').html(parseFloat(subtotal) - parseFloat(price));
+            let newTotal = parseFloat($('span.overall-total:eq(-1)').text()) - parseFloat(price);
+            $('span.overall-total').html(newTotal);
+        }    
     })
 
     // fetching meal products resources
