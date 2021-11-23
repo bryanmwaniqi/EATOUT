@@ -275,7 +275,7 @@ $(function () {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                 Maiores facilis  
                             </p>
-                            <span class="tangerine">$ <span>${product.price}</span></span>
+                            <span class="tangerine">$ <span class="tangerine">${product.price}</span></span>
                         </div>  
                     </td>
                     <td class="align-middle">
@@ -334,6 +334,9 @@ $(function () {
         })
         localStorage.setItem('shoppingcart', JSON.stringify(shoppinglist))
         updateTally();
+        let tally = $(this).siblings('p').text();
+        let newTally = parseInt(tally) + 1;
+        $(this).siblings('p').html(newTally);
         let price = $(this).parent().parent().siblings('td.cart-product').children('div').children('span').children('span').text();
         let subtotal = $(this).parent().parent().siblings('td#item-subtotal').children('span').text();
         $(this).parent().parent().siblings('td#item-subtotal').children('span').html(parseFloat(subtotal) + parseFloat(price));
@@ -363,6 +366,9 @@ $(function () {
             $('span.overall-total').html(newTotal);
             $(this).parent().parent().parent().remove();
         } else {
+            let tally = $(this).siblings('p').text();
+            let newTally = parseInt(tally) - 1;
+            $(this).siblings('p').html(newTally);
             $(this).parent().parent().siblings('td#item-subtotal').children('span').html(parseFloat(subtotal) - parseFloat(price));
             let newTotal = parseFloat($('span.overall-total:eq(-1)').text()) - parseFloat(price);
             $('span.overall-total').html(newTotal);
