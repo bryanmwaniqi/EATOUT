@@ -14,8 +14,13 @@ $(function () {
     updateTally()
     var verifyUrl = "https://pizza-eatout.herokuapp.com/api/v1/verify"
     updateSingleProduct()
-
-
+    
+    if (window.location.pathname == "/checkout.html") {
+        if (!isLoggedIn) {
+            location.replace("login.html");
+        } 
+    }
+    
     if (isLoggedIn) {
         $('a.logged-out').addClass('d-none');
         $('button.logged-in').removeClass('d-none');
