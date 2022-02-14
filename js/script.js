@@ -6,7 +6,6 @@ $(function () {
     //     },2500);
     // });
 
-    // localStorage.removeItem("shoppingcart")
     verify()
     var isLoggedIn = localStorage.getItem('loggedin');
     var token;
