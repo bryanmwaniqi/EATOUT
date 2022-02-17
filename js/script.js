@@ -780,6 +780,8 @@ $(function () {
         }
     }
 
+
+    
     // single product page template populating function
     function updateSingleProduct() {
         let loadedItem = JSON.parse(localStorage.getItem("loadedproduct"));
@@ -845,5 +847,7 @@ $(function () {
         localStorage.setItem('loadedproduct', JSON.stringify(loadedItem));
         updateTally()
         // location.reload()
+
+        
     })
 });
