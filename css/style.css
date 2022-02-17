@@ -955,7 +955,7 @@ a.signup{
     width: 80%;
     padding: 3rem auto;
 }
-.reserve input{
+.reserve input, .reserve select{
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
@@ -968,7 +968,7 @@ a.signup{
         padding: 3rem 6rem;
     }
 }
-.reserve input:hover, .reserve input:focus{
+.reserve input:hover, .reserve input:focus, .reserve select:hover, .reserve select:focus{
     -webkit-box-shadow: var(--tangerine) 0px 0px 5px -5px ;
     -moz-box-shadow: var(--tangerine) 0px 0px 5px -5px ;
     -ms-box-shadow: var(--tangerine) 0px 0px 5px -5px ;
@@ -2138,10 +2138,10 @@ tbody .col{
 .client-reservations{
     padding: 6rem 0.5rem;
 }
-span#addition, span#subtraction{
+span#addition, span#subtraction, span#increment, span#decrement{
     color: rgb(131, 131, 131);
 }
-span#addition:hover, span#subtraction:hover{
+span#addition:hover, span#subtraction:hover, span#increment:hover, span#decrement:hover{
     cursor: pointer;
     color: var(--tangerine);
 }

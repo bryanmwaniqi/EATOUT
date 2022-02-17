@@ -27,6 +27,8 @@
         <link rel="stylesheet" href="css/style.css">
 
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <!-- Paypal client side integration -->
+        <script src="https://www.paypal.com/sdk/js?client-id=Adn0ou6ncJl5dDAI30UgxGUigaYG89SoiTssfADL-Jq_BP47wgxTo-PjZidk9-QDRyrchaZZ-zBauvUj&currency=USD"></script>
     </head>
     <body>
         <!-- loader -->
@@ -56,7 +58,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav ml-auto mr-auto mt-2 mt-lg-0 ">
                     <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.html">Offers <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item" data-toggle="collapse"  data-target=".navbar-collapse.show" >
                         <a class="nav-link" href="menu.html">Menu</a>
@@ -99,7 +101,7 @@
                             <h4 class="text-capitalize">Order Summary</h4>
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="h6 font-weight-bold text-muted text-capitalize">Subtotal</span>
-                                <span class="overall-subtotal font-weight-bold text-muted">$  67.50</span>
+                                <span class="font-weight-bold text-muted">$ <span class="text-muted overall-total"></span> </span>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="h6 font-weight-bold text-muted">VAT</span>
@@ -112,9 +114,11 @@
                             <hr class="mb-2 mt-0">
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="h6 font-weight-bold text-muted text-capitalize">Order Total</span>
-                                <span class="overall-total tangerine font-weight-bold">$  68.50</span>
+                                <span class="tangerine font-weight-bold">$ <span class="tangerine final-total overall-total"></span>  </span>
                             </div>
                             <a class="btn coloured-btn mb-3" href="checkout.html">Place Order</a>
+                            <!-- Set up a container element for the button -->
+                            <div id="paypal-button-container"></div>
                             <a href="cart.html" class="tangerine">Review order?</a>
                         </div>
                     </div>     
@@ -130,33 +134,33 @@
                     <div class="form-row justify-content-center">
                         <div class="form-group col-md-6 pr-md-3">
                             <label for="first-name">First Name:</label>
-                            <input type="text" class="form-control rounded-input" placeholder="first name"  id="first-name">
+                            <input type="text" class="form-control rounded-input" required placeholder="first name"  id="first-name">
                         </div>
                         <div class="form-group col-md-6 pl-md-3">
                             <label for="last-name">Last Name:</label>
-                            <input type="text" class="form-control rounded-input" placeholder="last name" id="last-name">
+                            <input type="text" class="form-control rounded-input" required placeholder="last name" id="last-name">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="client-email">Email:</label>
-                        <input type="text" class="form-control rounded-input" placeholder="email" id="client-email">
+                        <label for="phone-no">Phone:</label>
+                        <input type="text" class="form-control rounded-input" required name="phone_one" placeholder="Phone number" id="phone-no">
                     </div>
                     <div class="form-group">
-                        <label for="contact">Contact info:</label>
-                        <input type="text" class="form-control rounded-input" placeholder="Mobile No" id="contact">
+                        <label for="contact">Alternate Phone:</label>
+                        <input type="text" class="form-control rounded-input" name="phone_two" placeholder="Alternate Phone" id="contact">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4 pr-md-3">
                             <label for="city">City:</label>
-                            <input type="text" class="form-control rounded-input" placeholder="city"  id="city">
+                            <input type="text" class="form-control rounded-input" required placeholder="city"  id="city">
                         </div>
                         <div class="form-group col-md-4 pl-md-3">
                             <label for="street">Street:</label>
-                            <input type="text" class="form-control rounded-input" placeholder="street" id="street">
+                            <input type="text" class="form-control rounded-input" required placeholder="street" id="street">
                         </div>
                         <div class="form-group col-md-4 pl-md-3">
                             <label for="ZIP">ZIP Code:</label>
-                            <input type="text" class="form-control rounded-input" placeholder="ZIP Code" id="zip">
+                            <input type="text" class="form-control rounded-input" required placeholder="ZIP Code" id="zip">
                         </div>
                     </div>
                     <div class="container my-4">
@@ -166,25 +170,25 @@
                             </div>
                         </div>
                     </div>
-                    <div id="payment-tab" class="d-flex align-self-stretch justify-content-between pr-md-5 pb-4">
-                        <label for="cards" class="tab-radio radio-group d-flex align-items-center text-muted" data-radio="cards">
-                            <input type="radio" checked name="size" id="cards" class="default-radio">
-                            <div class="custom-radio d-flex align-items-center justify-content-center"></div>
-                            Credit/Debit Card
-                        </label>
-                        <label for="paypal" class="tab-radio radio-group d-flex align-items-center text-muted" data-radio="paypal">
-                            <input type="radio" name="size" id="paypal" class="default-radio">
+                    <div id="payment-tab" class="d-flex align-self-stretch  pr-md-5 pb-4">
+                        <label for="paypal" class="tab-radio radio-group mr-md-5 d-flex align-items-center text-muted" data-radio="paypal">
+                            <input type="radio" checked name="size" id="paypal" class="default-radio">
                             <div class="custom-radio d-flex align-items-center justify-content-center"></div>
                             PayPal
                         </label>
-                        <label for="cod" class="tab-radio radio-group d-flex align-items-center text-muted" data-radio="cash">
+                        <label for="mpesa" class="tab-radio radio-group d-flex align-items-center text-muted" data-radio="mpesa">
+                            <input type="radio" name="size" id="mpesa" class="default-radio">
+                            <div class="custom-radio d-flex align-items-center justify-content-center"></div>
+                            M-Pesa
+                        </label>
+                        <!-- <label for="cod" class="tab-radio radio-group d-flex align-items-center text-muted" data-radio="cash">
                             <input type="radio" name="size" id="cod" class="default-radio">
                             <div class="custom-radio d-flex align-items-center justify-content-center"></div>
-                            COD
-                        </label>
+                            M-PESA
+                        </label> -->
                     </div>
                     <div class="payment-content">
-                        <div class="payment-gateway cards pb-4">
+                        <!-- <div class="payment-gateway cards pb-4">
                             <div class="form-group">
                                 <label for="card-name">Card Name:</label>
                                 <input type="text" class="form-control rounded-input" placeholder="name on card" id="card-name">
@@ -203,12 +207,15 @@
                                     <input type="text" class="form-control rounded-input" placeholder="7453" id="cvv">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="payment-gateway paypal mb-4">
-                            <span>proceed to paypal</span>
+                            <!-- Set up a container element for the button -->
+                            <div id="paypal-button-container"></div>
+                            <p>paypal account</p>
+                            <p>Debit or Credit card option</p>
                         </div>
-                        <div class="payment-gateway cash">
-                            cash on delivery 
+                        <div class="payment-gateway mpesa mb-4">
+                            Integrated M-pesa  
                         </div>
                     </div>
                     <label for="secure-checkout" class="tangerine checkbox-group d-flex align-items-center pr-md-5">
@@ -267,6 +274,41 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        
+        <script>
+            paypal.Buttons({
+      
+              // Sets up the transaction when a payment button is clicked
+              createOrder: function(data, actions) {
+                return actions.order.create({
+                  purchase_units: [{
+                    amount: {
+                      value: document.getElementById("overall-total").value // Can reference variables or functions. Example: `value: document.getElementById('...').value`
+                    }
+                  }]
+                });
+              },
+      
+              // Finalize the transaction after payer approval
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(orderData) {
+                  // Successful capture! For dev/demo purposes:
+                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                      var transaction = orderData.purchase_units[0].payments.captures[0];
+                      alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+      
+                  // When ready to go live, remove the alert and show a success message within this page. For example:
+                  // var element = document.getElementById('paypal-button-container');
+                  // element.innerHTML = '';
+                  // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                  // Or go to another URL:  actions.redirect('thank_you.html');
+                });
+              }
+            }).render('#paypal-button-container');
+      
+          </script>
+
+        <!-- custom js -->
         <script src="js/script.js"></script>    
     </body>
 </html>
