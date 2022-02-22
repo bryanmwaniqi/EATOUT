@@ -127,20 +127,7 @@ a:hover{
     -o-box-shadow: none ;
     box-shadow: none;
 }
-.safaricom-green{
-    background-color: #136207;
-}
-.safaricom-green:hover{
-    background-color: transparent;
-    border: 1.3px solid #136207;
-    color: #136207;
-}
-.safaricom-green span{
-    color: #fff;
-}
-.safaricom-green:hover span{
-    color: #136207;
-}
+
 .regular-btn{
     -webkit-text-decoration: none;
     -moz-text-decoration: none;
@@ -2158,5 +2145,19 @@ span#addition, span#subtraction, span#increment, span#decrement{
 span#addition:hover, span#subtraction:hover, span#increment:hover, span#decrement:hover{
     cursor: pointer;
     color: var(--tangerine);
+}
+.safaricom-green{
+    background-color: #136207;
+}
+.safaricom-green:hover{
+    background-color: transparent;
+    border: 1.3px solid #136207;
+    color: #136207;
+}
+.safaricom-green span{
+    color: #fff;
+}
+.safaricom-green:hover span{
+    color: #136207;
 }
 /* end of single pages styling */
