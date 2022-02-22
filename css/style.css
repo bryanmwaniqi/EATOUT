@@ -127,6 +127,20 @@ a:hover{
     -o-box-shadow: none ;
     box-shadow: none;
 }
+.safaricom-green{
+    background-color: #136207;
+}
+.safaricom-green:hover{
+    background-color: transparent;
+    border: 1.3px solid #136207;
+    color: #136207;
+}
+.safaricom-green span{
+    color: #fff;
+}
+.safaricom-green:hover span{
+    color: #136207;
+}
 .regular-btn{
     -webkit-text-decoration: none;
     -moz-text-decoration: none;
