@@ -116,7 +116,7 @@
                                 <span class="h6 font-weight-bold text-muted text-capitalize">Order Total</span>
                                 <span class="tangerine font-weight-bold">$ <span class="tangerine final-total overall-total"></span>  </span>
                             </div>
-                            <a class="btn safaricom-green coloured-btn mb-3" href="checkout.html">Pay with <span class="font-weight-bold ">M-PESA</span></a>
+                            <a class="btn safaricom-green coloured-btn mb-3" data-toggle="modal" data-target="#MpesaModal" >Pay with <span class="font-weight-bold ">M-PESA</span></a>
                             <!-- Set up a container element for the button -->
                             <div id="paypal-button-container"></div>
                             <a href="cart.html" class="tangerine">Review order?</a>
@@ -228,6 +228,33 @@
                         sed error quae sequi vitae. Commodi quis, mollitia alias, quod ea 
                         numquam sapiente fuga sint velit assumenda laudantium omnis totam 
                     </p> 
+                </div>
+            </div>
+            
+            <!-- M-PESA Modal -->
+            <div class="modal fade" id="MpesaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">M-PESA Number</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="mpesa-form">
+                            <div class="form-group">
+                              <label for="recipient-name" class="col-form-label">Phone No:</label>
+                              <input type="tel" class="form-control rounded-input" required placeholder="2547xxxxxxxx" id="recipient-name">
+                            </div>
+                          </form>
+                          <p class="text-muted">Input a registered safaricom phone number and in the form 2547xxxxxxxx.</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn coloured-btn mr-auto" data-dismiss="modal">Exit</button>
+                    <button type="submit" form="mpesa-form" id="mpesa-btn" class="btn coloured-btn">Pay</button>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
