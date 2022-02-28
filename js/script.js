@@ -28,6 +28,67 @@ $(function () {
         $('.logged-in').addClass('d-none');
     }
 
+    // M-PESA Payment logic
+    const mpesaUrl = "http://127.0.0.1:5000/api/v1/payment"
+    $('#mpesa-pay-form').submit(function (e) {
+        e.preventDefault();
+        token = getCookie("csrf_access_token");
+        
+        let formData = new FormData(e.target);
+        let phonePayload = {};
+        formData.forEach((value, key) => (phonePayload[key] = value));
+        phonePayload.phone = parseInt(phonePayload.phone);
+        phonePayload["amount"] = parseInt($('span.final-total').text());
+        console.log(phonePayload);
+        setTimeout(function() {
+            $('.content-container #main-container').prepend(
+                `<div class="row">
+                    <div class="col">
+                        <div class="alert alert-success alert-dismissible fade show mb-5" role="alert">
+                            Your payment has been received successfully.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>`
+            );
+        }, 300);
+        
+        setTimeout(function() {
+            $(".alert").alert('close');
+        }, 3000);
+        $('#MpesaModal').modal('hide');
+        // fetch(mpesaUrl, {
+        //     mode: "cors",
+        //     method: "POST",
+        //     credentials: "include",
+        //     headers: {
+        //         "x-csrf-token": token
+        //     },
+        //     body: JSON.stringify(phonePayload)
+        // }).then(response => {
+        //     return response.json();
+        // }).then( (data) => {
+        //     $('.content-container .main-container').prepend(
+        //         `<div class="row">
+        //             <div class="col">
+        //                 <div class="alert alert-success alert-dismissible fade show mb-5" role="alert">
+        //                     Your payment has been received successfully.
+        //                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        //                         <span aria-hidden="true">&times;</span>
+        //                     </button>
+        //                 </div>
+        //             </div>
+        //         </div>`
+        //     );
+        //     setTimeout(function() {
+        //         $(".alert").alert('close');
+        //     }, 2000);
+        // }
+        // )
+    })
+
     // box shadow on scroll logic
     $(window).scroll(function () {
         $('nav.navbar').toggleClass('scrolled', $(this).scrollTop() > 80);
@@ -848,7 +909,7 @@ $(function () {
         updateTally()
         // location.reload()
 
-        // M-PESA Payment logic
-        let mpesaUrl = "https://127.0.0.1:5000/api/v1/payment"
+        
+        // $('#')
     })
 });
