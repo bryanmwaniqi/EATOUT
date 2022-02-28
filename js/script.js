@@ -40,24 +40,6 @@ $(function () {
         phonePayload.phone = parseInt(phonePayload.phone);
         phonePayload["amount"] = parseInt($('span.final-total').text());
         console.log(phonePayload);
-        setTimeout(function() {
-            $('.content-container #main-container').prepend(
-                `<div class="row">
-                    <div class="col">
-                        <div class="alert alert-success alert-dismissible fade show mb-5" role="alert">
-                            Your payment has been received successfully.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>`
-            );
-        }, 300);
-        
-        setTimeout(function() {
-            $(".alert").alert('close');
-        }, 3000);
         
         fetch(mpesaUrl, {
             mode: "cors",
