@@ -46,6 +46,7 @@ $(function () {
             method: "POST",
             credentials: "include",
             headers: {
+                'Content-Type': 'application/json',
                 "x-csrf-token": token
             },
             body: JSON.stringify(phonePayload)
