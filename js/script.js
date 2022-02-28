@@ -29,7 +29,7 @@ $(function () {
     }
 
     // M-PESA Payment logic
-    const mpesaUrl = "http://127.0.0.1:5000/api/v1/payment"
+    const mpesaUrl = "https://pizza-eatout.herokuapp.com/api/v1/payment_simulation"
     $('#mpesa-pay-form').submit(function (e) {
         e.preventDefault();
         token = getCookie("csrf_access_token");
@@ -58,35 +58,52 @@ $(function () {
         setTimeout(function() {
             $(".alert").alert('close');
         }, 3000);
-        $('#MpesaModal').modal('hide');
-        // fetch(mpesaUrl, {
-        //     mode: "cors",
-        //     method: "POST",
-        //     credentials: "include",
-        //     headers: {
-        //         "x-csrf-token": token
-        //     },
-        //     body: JSON.stringify(phonePayload)
-        // }).then(response => {
-        //     return response.json();
-        // }).then( (data) => {
-        //     $('.content-container .main-container').prepend(
-        //         `<div class="row">
-        //             <div class="col">
-        //                 <div class="alert alert-success alert-dismissible fade show mb-5" role="alert">
-        //                     Your payment has been received successfully.
-        //                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        //                         <span aria-hidden="true">&times;</span>
-        //                     </button>
-        //                 </div>
-        //             </div>
-        //         </div>`
-        //     );
-        //     setTimeout(function() {
-        //         $(".alert").alert('close');
-        //     }, 2000);
-        // }
-        // )
+        
+        fetch(mpesaUrl, {
+            mode: "cors",
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "x-csrf-token": token
+            },
+            body: JSON.stringify(phonePayload)
+        }).then(response => {
+            return response.json();
+        }).then( (data) => {
+            if ("ResponseCode" in data) {
+                $('.content-container .main-container').prepend(
+                    `<div class="row">
+                        <div class="col">
+                            <div class="alert alert-success alert-dismissible fade show mb-5" role="alert">
+                                Payment request to M-PESA accepted.Kindly enter your pin to complete payment.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>`
+                );
+            } else {
+                $('.content-container .main-container').prepend(
+                    `<div class="row">
+                        <div class="col">
+                            <div class="alert alert-danger alert-dismissible fade show mb-5" role="alert">
+                                Something went wrong, try again later.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>`
+                );
+            }
+            
+            setTimeout(function() {
+                $(".alert").alert('close');
+            }, 2000);
+            $('#MpesaModal').modal('hide');
+        }
+        )
     })
 
     // box shadow on scroll logic
