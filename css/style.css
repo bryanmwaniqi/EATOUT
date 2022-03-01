@@ -1044,6 +1044,9 @@ a.signup{
         padding: 1rem 1rem;
     }
 }
+.owl-dots .owl-dot {
+    outline: none;
+}
 #clients-carousel .owl-dot span{
     background: none !important;
     border-color: var(--primary-color) !important;
