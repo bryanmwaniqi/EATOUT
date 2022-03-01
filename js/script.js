@@ -33,13 +33,13 @@ $(function () {
     $('#mpesa-pay-form').submit(function (e) {
         e.preventDefault();
         token = getCookie("csrf_access_token");
-        
         let formData = new FormData(e.target);
         let phonePayload = {};
         formData.forEach((value, key) => (phonePayload[key] = value));
         phonePayload.phone = parseInt(phonePayload.phone);
         phonePayload["amount"] = parseInt($('span.final-total').text());
         console.log(phonePayload);
+        $('#MpesaModal').modal('hide');
         
         fetch(mpesaUrl, {
             mode: "cors",
@@ -54,11 +54,11 @@ $(function () {
             return response.json();
         }).then( (data) => {
             if ("ResponseCode" in data) {
-                $('.content-container .main-container').prepend(
+                $('.content-container #main-container').prepend(
                     `<div class="row">
                         <div class="col">
                             <div class="alert alert-success alert-dismissible fade show mb-5" role="alert">
-                                Payment request to M-PESA accepted.Kindly enter your pin to complete payment.
+                                Payment request to M-PESA accepted. Enter your PIN to complete payment.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -67,7 +67,7 @@ $(function () {
                     </div>`
                 );
             } else {
-                $('.content-container .main-container').prepend(
+                $('.content-container #main-container').prepend(
                     `<div class="row">
                         <div class="col">
                             <div class="alert alert-danger alert-dismissible fade show mb-5" role="alert">
@@ -83,8 +83,7 @@ $(function () {
             
             setTimeout(function() {
                 $(".alert").alert('close');
-            }, 2000);
-            $('#MpesaModal').modal('hide');
+            }, 4000);
         }
         )
     })
@@ -340,7 +339,7 @@ $(function () {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                 Maiores facilis  
                             </p>
-                            <span class="tangerine">$ <span class="tangerine">${product.price}</span></span>
+                            <span class="tangerine">kes <span class="tangerine">${product.price}</span></span>
                         </div>  
                     </td>
                     <td class="align-middle">
@@ -351,7 +350,7 @@ $(function () {
                         </div>
                     </td>
                     <td  id="item-subtotal" class="font-weight-bold tangerine align-middle">
-                        $ <span class="font-weight-bold tangerine">${product.price * product.product_tally}</span> 
+                        kes <span class="font-weight-bold tangerine">${product.price * product.product_tally}</span> 
                     </td>
                     <td  class="bin align-middle">
                         <i class="fas fa-trash-alt fa-lg text-muted delete"></i>
@@ -458,7 +457,7 @@ $(function () {
                     </div>
                     <div class="meal-text">
                         <h6 class="font-weight-bold my-2">${product.name}</h6>
-                        <span class="font-weight-bold">$ <span>${product.price}</span></span>
+                        <span class="font-weight-bold">kes <span>${product.price}</span></span>
                         <p class="">
                             ${product.description}
                         </p>
