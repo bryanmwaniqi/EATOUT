@@ -515,6 +515,11 @@ a.signup{
         right: -7%;
     }
 }
+@media (min-width:1300px){
+    #landing-offers-carousel{
+        margin-top: 4rem;
+    }
+}
 @media (max-width:768px){
     .split{
         height: 11.5rem;
@@ -1231,11 +1236,16 @@ blockquote{
 
 /* footer section styling */
 .footer-section{
-    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    margin-top: auto;
+    margin-bottom: 0;
     background-color: var(--tangerine);
     min-height: 5rem;
     overflow: hidden;
-    padding: auto 1rem;
 }
 .footer-section  div.socials{
     height: 1.8rem;
