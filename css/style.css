@@ -1234,17 +1234,25 @@ blockquote{
 }
 /* end of operation styling */
 
+/* body content wrapper styling to ensure footer stays at the bottom */
+.content-wrapper{
+    position: relative;
+    min-height: 100vh;
+}
+.home-page-wrapper{
+    position: relative;
+    min-height: 10vh;
+}
+
 /* footer section styling */
 .footer-section{
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 1.5rem;
-    margin-top: auto;
-    margin-bottom: 0;
+    margin-top: 9rem;
     background-color: var(--tangerine);
-    min-height: 5rem;
     overflow: hidden;
 }
 .footer-section  div.socials{
