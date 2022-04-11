@@ -517,37 +517,37 @@ a.signup{
 }
 @media (min-width:1300px){
     section.offers-landing #landing-page-content{
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
 }
 @media (min-width:1500px){
     section.offers-landing #landing-page-content{
-        margin-top: 2.5rem;
+        margin-top: 2rem;
     }
 }
 @media (min-width:1600px){
     section.offers-landing #landing-page-content{
-        margin-top: 4rem;
+        margin-top: 3.5rem;
     }
 }
 @media (min-width:1700px){
     section.offers-landing #landing-page-content{
-        margin-top: 5rem;
+        margin-top: 4.5rem;
     }
 }
 @media (min-width:1800px){
     section.offers-landing #landing-page-content{
-        margin-top: 6rem;
+        margin-top: 5.5rem;
     }
 }
 @media (min-width:1900px){
     section.offers-landing #landing-page-content{
-        margin-top: 7.5rem;
+        margin-top: 7rem;
     }
 }
 @media (min-width:2000px){
     section.offers-landing #landing-page-content{
-        margin-top: 9.5rem;
+        margin-top: 9rem;
     }
 }
 @media (max-width:768px){
